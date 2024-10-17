@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  background-image: radial-gradient(#141414 2px, transparent 2px);
+  background-size: 47px 47px;
+  background-color: #0a0a0a;
+
+  /* background-color: #0a0a0a; */
+
+  .bebas-neue-regular {
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .manrope-regular {
+    font-family: "Manrope", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+  }
+}

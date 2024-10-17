@@ -1,0 +1,130 @@
+import React from "react";
+import { styled } from "@mui/system";
+import { Box, Button, Typography } from "@mui/material";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import SocialIcons from "./SocialIcons";
+
+const HeroContainer = styled(Box)(() => ({
+  width: "100%",
+  height: "100%",
+  display: "grid",
+  gridTemplateColumns: "1.5fr 1fr",
+  gridTemplateRows: "1fr",
+  gridColumnGap: "0px",
+  gridRowGap: "0px",
+  padding: "0 16px",
+  margin: "0 20px",
+
+  // Add media query for mobile view
+  "@media (max-width: 700px)": {
+    gridTemplateColumns: "1fr",
+    gridTemplateRows: "auto auto",
+  },
+}));
+
+const HeroTextContainer = styled(Box)(() => ({
+  display: "flex",
+  flexDirection: "column",
+  gap: "20px",
+  justifyContent: "flex-start",
+  alignItems: "flex-start",
+  marginTop: "90px",
+}));
+
+const Hero: React.FC = () => {
+  return (
+    <HeroContainer>
+      <HeroTextContainer>
+        {/* "hi, i am" text, hidden on mobile */}
+        <Typography
+          sx={{
+            fontFamily: "Bebas Neue",
+            color: "#FFFFFF",
+            fontSize: "90px",
+            lineHeight: 1,
+            display: { xs: "none", md: "block" }, // Hide on mobile (xs)
+          }}
+        >
+          hi, i am <br />
+        </Typography>
+
+        {/* Name text, always visible */}
+        <Typography
+          sx={{
+            fontFamily: "Bebas Neue",
+            color: "#FFFFFF",
+            fontSize: "90px",
+            lineHeight: 1,
+          }}
+        >
+          AKINTADE OLUWASEUN
+        </Typography>
+
+        <Typography
+          sx={{
+            fontFamily: "manrope",
+            lineHeight: "27px",
+            fontWeight: 400,
+            color: "#C7C7C7",
+            fontSize: "18px",
+            textWrap: "word-break",
+          }}
+        >
+          I am a mobile app developer with 3 years of experience in creating
+          high-quality apps using Flutter. Passionate about learning new
+          technologies and solving problems. Skilled in teamwork and delivering
+          user-friendly, scalable solutions in agile environments.
+        </Typography>
+
+        <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
+          <Button
+            variant="contained"
+            endIcon={<ArrowOutwardIcon />}
+            disableElevation
+            sx={{
+              width: "187px",
+              height: "54px",
+              backgroundColor: "#D3E97A",
+              fontFamily: "Manrope",
+              fontSize: "16px",
+              fontWeight: 700,
+              lineHeight: "27px",
+              color: "#0A0A0A",
+              borderRadius: "100px",
+            }}
+          >
+            CONTACT ME
+          </Button>
+          <Box
+            sx={{
+              display: { xs: "flex", md: "none" },
+              alignItems: "center",
+              gap: "20px",
+            }}
+          >
+            <SocialIcons />
+          </Box>
+        </Box>
+      </HeroTextContainer>
+
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <img
+          src="/assets/images/memoji.png"
+          alt="memoji"
+          style={{
+            width: "500px",
+            height: "500px",
+          }}
+        />
+      </Box>
+    </HeroContainer>
+  );
+};
+
+export default Hero;
