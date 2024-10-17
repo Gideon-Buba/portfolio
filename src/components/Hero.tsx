@@ -12,9 +12,7 @@ const HeroContainer = styled(Box)(() => ({
   gridTemplateRows: "1fr",
   gridColumnGap: "0px",
   gridRowGap: "0px",
-  // padding: "0 16px",
 
-  // Add media query for mobile view
   "@media (max-width: 700px)": {
     gridTemplateColumns: "1fr",
     gridTemplateRows: "auto auto",
@@ -47,7 +45,6 @@ const Hero: React.FC = () => {
           hi, i am <br />
         </Typography>
 
-        {/* Name text, always visible */}
         <Typography
           sx={{
             fontFamily: "Bebas Neue",
@@ -106,22 +103,23 @@ const Hero: React.FC = () => {
         </Box>
       </HeroTextContainer>
 
-      {/* <Box
+      <Box
         sx={{
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <img
+        <Box
+          component="img"
           src="/assets/images/memoji.png"
           alt="memoji"
-          style={{
-            width: "500px",
-            height: "500px",
+          sx={{
+            width: { xs: "200px", sm: "300px", md: "500px" },
+            height: { xs: "200px", sm: "300px", md: "500px" },
           }}
         />
-      </Box> */}
+      </Box>
     </HeroContainer>
   );
 };
