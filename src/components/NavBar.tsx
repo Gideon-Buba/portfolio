@@ -1,6 +1,6 @@
 import { Box, Typography, IconButton, Drawer } from "@mui/material";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import CloseIcon from "@mui/icons-material/Close";
 import SocialIcons from "./SocialIcons";
 import hamburgerIcon from "/assets/icons/hamburger-icon.svg";
@@ -24,10 +24,14 @@ const NavBar: React.FC = () => {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    "&:hover": {
-      color: "#0A0A0A",
-      backgroundColor: "#D3E97A",
-    },
+  };
+
+  const activeStyle = {
+    backgroundColor: "#D3E97A",
+    color: "#0A0A0A",
+    height: "75px",
+    width: "158px",
+    borderRadius: "100px",
   };
 
   return (
@@ -38,19 +42,20 @@ const NavBar: React.FC = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        // paddingX: { xs: "16px", md: "32px" },
       }}
     >
       {/* Logo */}
-      <Typography
-        sx={{
-          fontFamily: "Bebas Neue",
-          color: "#C7C7C7",
-          fontSize: "37px",
-        }}
-      >
-        TADE.ME
-      </Typography>
+      <NavLink to="/" style={{ textDecoration: "none" }}>
+        <Typography
+          sx={{
+            fontFamily: "Bebas Neue",
+            color: "#C7C7C7",
+            fontSize: "37px",
+          }}
+        >
+          TADE.ME
+        </Typography>
+      </NavLink>
 
       {/* Hamburger Icon for Mobile */}
       <IconButton
@@ -86,15 +91,30 @@ const NavBar: React.FC = () => {
           border: "1px solid #232323",
         }}
       >
-        <Link to="/about" style={linkStyle}>
+        <NavLink
+          to="/about"
+          style={({ isActive }) =>
+            isActive ? { ...linkStyle, ...activeStyle } : linkStyle
+          }
+        >
           About
-        </Link>
-        <Link to="/projects" style={linkStyle}>
+        </NavLink>
+        <NavLink
+          to="/projects"
+          style={({ isActive }) =>
+            isActive ? { ...linkStyle, ...activeStyle } : linkStyle
+          }
+        >
           Projects
-        </Link>
-        <Link to="/contact" style={linkStyle}>
+        </NavLink>
+        <NavLink
+          to="/contact"
+          style={({ isActive }) =>
+            isActive ? { ...linkStyle, ...activeStyle } : linkStyle
+          }
+        >
           Contact
-        </Link>
+        </NavLink>
       </Box>
 
       {/* Social Icons (Hidden on Mobile) */}
@@ -123,15 +143,30 @@ const NavBar: React.FC = () => {
           <IconButton onClick={toggleDrawer} sx={{ alignSelf: "flex-end" }}>
             <CloseIcon sx={{ color: "#C7C7C7" }} />
           </IconButton>
-          <Link to="/about" style={linkStyle}>
+          <NavLink
+            to="/about"
+            style={({ isActive }) =>
+              isActive ? { ...linkStyle, ...activeStyle } : linkStyle
+            }
+          >
             About
-          </Link>
-          <Link to="/projects" style={linkStyle}>
+          </NavLink>
+          <NavLink
+            to="/projects"
+            style={({ isActive }) =>
+              isActive ? { ...linkStyle, ...activeStyle } : linkStyle
+            }
+          >
             Projects
-          </Link>
-          <Link to="/contact" style={linkStyle}>
+          </NavLink>
+          <NavLink
+            to="/contact"
+            style={({ isActive }) =>
+              isActive ? { ...linkStyle, ...activeStyle } : linkStyle
+            }
+          >
             Contact
-          </Link>
+          </NavLink>
         </Box>
       </Drawer>
     </Box>
