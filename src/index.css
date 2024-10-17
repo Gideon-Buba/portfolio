@@ -1,11 +1,9 @@
 * {
   margin: 0;
   padding: 0;
-  background-image: radial-gradient(#141414 2px, transparent 2px);
+  /* background-image: radial-gradient(#141414 2px, transparent 2px);
   background-size: 47px 47px;
-  background-color: #0a0a0a;
-
-  /* background-color: #0a0a0a; */
+  background-color: #0a0a0a; */
 
   .bebas-neue-regular {
     font-family: "Bebas Neue", sans-serif;
@@ -18,4 +16,12 @@
     font-optical-sizing: auto;
     font-style: normal;
   }
+
+  /* Apply background only to the main container */
+}
+
+body {
+  background-image: radial-gradient(#141414 2px, transparent 2px);
+  background-size: 47px 47px;
+  background-color: #0a0a0a;
 }
