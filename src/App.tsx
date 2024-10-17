@@ -10,6 +10,7 @@ const App: React.FC = () => {
     <Router>
       <Container
         maxWidth={false}
+        className="main-background"
         sx={{
           maxWidth: "1330px",
           margin: "0 auto",

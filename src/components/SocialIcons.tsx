@@ -15,8 +15,8 @@ const SocialIcons: React.FC = () => {
   return (
     <Box
       sx={{
-        display: { xs: "none", md: "flex" },
-        gap: "20px",
+        display: "flex",
+        gap: "10px",
         justifyContent: "flex-end",
         alignItems: "center",
       }}

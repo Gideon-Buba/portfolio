@@ -12,8 +12,7 @@ const HeroContainer = styled(Box)(() => ({
   gridTemplateRows: "1fr",
   gridColumnGap: "0px",
   gridRowGap: "0px",
-  padding: "0 16px",
-  margin: "0 20px",
+  // padding: "0 16px",
 
   // Add media query for mobile view
   "@media (max-width: 700px)": {
@@ -99,7 +98,7 @@ const Hero: React.FC = () => {
             sx={{
               display: { xs: "flex", md: "none" },
               alignItems: "center",
-              gap: "20px",
+              gap: "10px",
             }}
           >
             <SocialIcons />
@@ -107,7 +106,7 @@ const Hero: React.FC = () => {
         </Box>
       </HeroTextContainer>
 
-      <Box
+      {/* <Box
         sx={{
           display: "flex",
           alignItems: "center",
@@ -122,7 +121,7 @@ const Hero: React.FC = () => {
             height: "500px",
           }}
         />
-      </Box>
+      </Box> */}
     </HeroContainer>
   );
 };

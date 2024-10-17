@@ -38,7 +38,7 @@ const NavBar: React.FC = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        paddingX: { xs: "16px", md: "32px" },
+        // paddingX: { xs: "16px", md: "32px" },
       }}
     >
       {/* Logo */}
