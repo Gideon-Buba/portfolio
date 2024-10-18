@@ -58,7 +58,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
   return (
     <Box
       sx={{
-        marginBottom: "32px",
+        marginBottom: "100px",
         display: { xs: "block", md: "grid" },
         gridTemplateColumns: { md: "1fr 2fr" },
         gridTemplateRows: "1fr",
@@ -83,7 +83,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
           component="img"
           src={thumbnail}
           alt={projectTitle}
-          sx={{ width: "100%", maxWidth: "100%", height: "auto" }}
+          sx={{ width: "488px", maxWidth: "488px", height: "auto" }}
         />
       </Box>
 
@@ -92,7 +92,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
         <Typography
           variant="h4"
           sx={{
-            marginBottom: "8px",
+            my: "8px",
             color: "#FFFFFF",
             fontFamily: "Manrope",
             fontWeight: 500,
