@@ -1,5 +1,6 @@
 import { Box, Typography, Divider } from "@mui/material";
 import React from "react";
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 
 // Define the type for the project props
 interface ProjectProps {
@@ -57,6 +58,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
 }) => {
   return (
     <Box
+      data-aos="fade-up" // AOS animation attribute
       sx={{
         marginBottom: "100px",
         display: { xs: "block", md: "grid" },
@@ -169,11 +171,38 @@ const ProjectCard: React.FC<ProjectProps> = ({
           target="_blank"
           rel="noopener noreferrer"
           sx={{
+            position: "relative", // Position relative for the pseudo-element
             color: "#D3E97A",
-            textDecoration: "underline",
+            textDecoration: "none", // Remove default underline
+            fontWeight: 600,
+            cursor: "pointer",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "5px", // Spacing between text and icon
+            "&::after": {
+              content: '""',
+              position: "absolute",
+              width: "0%",
+              height: "2px",
+              bottom: "-3px",
+              left: "0",
+              backgroundColor: "#D3E97A",
+              transition: "width 0.3s ease-out",
+            },
+            "&:hover::after": {
+              width: "100%",
+            },
+            "& .hoverIcon": {
+              opacity: 0,
+              transition: "opacity 0.3s ease-out",
+            },
+            "&:hover .hoverIcon": {
+              opacity: 1,
+            },
           }}
         >
           VIEW LIVE SITE
+          <ArrowOutwardIcon className="hoverIcon" sx={{ fontSize: "20px" }} />
         </Typography>
       </Box>
     </Box>
