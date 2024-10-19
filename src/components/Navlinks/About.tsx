@@ -1,6 +1,23 @@
-import { Box, Typography, Button, Paper } from "@mui/material";
+import { Box, Typography, Button, Paper, Icon } from "@mui/material";
 import React from "react";
 import SocialIcons from "../SocialIcons";
+
+const DownloadIcon = (
+  <Icon
+    sx={{
+      width: "auto",
+      height: "auto",
+      padding: 1,
+      backgroundColor: "#0A0A0A",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      borderRadius: "20px",
+    }}
+  >
+    <img src="/assets/icons/download-icon.svg" alt="download" />
+  </Icon>
+);
 
 const languages = ["JAVASCRIPT", "SWIFT", "DART"];
 
@@ -55,16 +72,17 @@ const About: React.FC = () => {
     <Box
       sx={{
         color: "#FFFFFF",
-        py: 5,
+        width: "100%",
+        // px: { xs: 2, sm: 4, md: 8 }, // Add padding for responsiveness
       }}
     >
       {/* About container */}
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          alignContent: "flex-start",
+          flexDirection: { xs: "column", md: "row" }, // Stack on small screens, row on larger screens
+          gap: { md: 22 }, // Add gap for responsiveness
+          mt: "100px",
           my: 5,
         }}
       >
@@ -75,6 +93,7 @@ const About: React.FC = () => {
             fontWeight: 400,
             fontSize: { xs: "60px", md: "101px" }, // responsive font size
             lineHeight: 1,
+            whiteSpace: "nowrap",
           }}
         >
           About Me
@@ -121,22 +140,25 @@ const About: React.FC = () => {
               flexWrap: "wrap",
             }}
           >
-            <Button
-              variant="contained"
-              sx={{
-                bgcolor: "#D3E97A",
-                borderRadius: "100px",
-                color: "#000",
-                fontWeight: 600,
-                px: 3,
-                py: 1,
-                height: "54px",
-                whiteSpace: "nowrap",
-              }}
-            >
-              Download Resume
-            </Button>
-            <SocialIcons />
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <Button
+                variant="contained"
+                endIcon={DownloadIcon}
+                sx={{
+                  bgcolor: "#D3E97A",
+                  borderRadius: "100px",
+                  color: "#000",
+                  fontWeight: 600,
+                  px: 3,
+                  py: 1,
+                  height: "54px",
+                  whiteSpace: "nowrap",
+                }}
+              >
+                Download Resume
+              </Button>
+              <SocialIcons />
+            </Box>
 
             {/* Memoji image will appear under on smaller screens */}
             <Box
@@ -166,9 +188,8 @@ const About: React.FC = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
-          flexWrap: "wrap", // ensure responsiveness
-          alignContent: "flex-start",
+          flexDirection: { xs: "column", md: "row" }, // Stack on small screens, row on larger screens
+          gap: { xs: 4, md: 8 }, // Add gap for responsiveness
           mt: 22,
         }}
       >
@@ -178,6 +199,7 @@ const About: React.FC = () => {
             fontWeight: 400,
             fontSize: { xs: "60px", md: "101px" }, // responsive font size
             lineHeight: 1,
+            whiteSpace: "nowrap",
           }}
         >
           My EDUCATION
@@ -188,7 +210,8 @@ const About: React.FC = () => {
           <Box
             sx={{
               display: "flex",
-              alignItems: "center",
+              flexDirection: { xs: "column", md: "row" }, // Stack on small screens, row on larger screens
+              alignItems: { xs: "flex-start", md: "center" },
               justifyContent: "space-between",
             }}
           >
@@ -209,6 +232,7 @@ const About: React.FC = () => {
                 fontWeight: 400,
                 fontSize: "18px",
                 color: "#C7C7C7",
+                mt: { xs: 2, md: 0 }, // Add margin top on small screens
               }}
             >
               Dec. 2023
@@ -251,9 +275,8 @@ const About: React.FC = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
-          flexWrap: "wrap",
-          alignContent: "flex-start",
+          flexDirection: { xs: "column", md: "row" }, // Stack on small screens, row on larger screens
+          gap: { xs: 4, md: 8 }, // Add gap for responsiveness
           mt: 22,
         }}
       >
@@ -263,6 +286,7 @@ const About: React.FC = () => {
             fontWeight: 400,
             fontSize: { xs: "60px", md: "101px" },
             lineHeight: 1,
+            whiteSpace: "nowrap",
           }}
         >
           My Capabilities
@@ -285,8 +309,8 @@ const About: React.FC = () => {
                 fontFamily: "Manrope",
                 fontWeight: 700,
                 fontSize: "20px",
-                // lineHeight: "20px",
-                // my: 2,
+                lineHeight: "20px",
+                my: 2,
               }}
             >
               LANGUAGES
@@ -309,16 +333,15 @@ const About: React.FC = () => {
                     justifyContent: "center",
                     padding: 1.8,
                     color: "#FFFFFF",
-                    bgcolor: "black",
+                    bgcolor: "#0a0a0a",
                     borderRadius: "100px",
                     fontFamily: "Manrope",
                     fontWeight: 700,
                     fontSize: "16px",
                     border: "1px solid #484848",
                     whiteSpace: "nowrap",
-                    minWidth: "120px", // Set a minimum width for responsiveness
-                    flex: "1 1 auto", // Allow cards to grow and shrink
-                    maxWidth: "200px", // Set a max width for cards
+                    flex: "1 1 auto",
+                    maxWidth: "200px",
                   }}
                 >
                   {language}
@@ -331,9 +354,11 @@ const About: React.FC = () => {
           <Box
             sx={{
               display: "flex",
-              alignItems: "center",
+              // alignItems: "center",
               justifyContent: "space-between",
-              flexWrap: "wrap", // Enable wrapping
+              flexWrap: "wrap",
+              gap: 10,
+              my: 8,
             }}
           >
             <Typography
@@ -349,6 +374,7 @@ const About: React.FC = () => {
             </Typography>
             <Box
               sx={{
+                width: "400px",
                 display: "flex",
                 gap: 2,
                 flexWrap: "wrap", // Enable wrapping of cards
@@ -364,16 +390,16 @@ const About: React.FC = () => {
                     justifyContent: "center",
                     padding: 1.8,
                     color: "#FFFFFF",
-                    bgcolor: "black",
+                    bgcolor: "#0a0a0a",
                     borderRadius: "100px",
                     fontFamily: "Manrope",
                     fontWeight: 700,
                     fontSize: "16px",
                     border: "1px solid #484848",
                     whiteSpace: "nowrap",
-                    minWidth: "120px", // Set a minimum width for responsiveness
-                    flex: "1 1 auto", // Allow cards to grow and shrink
-                    maxWidth: "200px", // Set a max width for cards
+                    flex: "1 1 auto",
+                    maxWidth: "200px",
+                    textTransform: "uppercase",
                   }}
                 >
                   {framework}
@@ -388,9 +414,8 @@ const About: React.FC = () => {
       <Box
         sx={{
           display: "flex",
-          justifyContent: "space-between",
-          flexWrap: "wrap", // ensure responsiveness
-          alignContent: "flex-start",
+          flexDirection: { xs: "column", md: "row" }, // Stack on small screens, row on larger screens
+          gap: { xs: 4, md: 8 }, // Add gap for responsiveness
           mt: 22,
         }}
       >
@@ -400,6 +425,7 @@ const About: React.FC = () => {
             fontWeight: 400,
             fontSize: { xs: "60px", md: "101px" }, // responsive font size
             lineHeight: 1,
+            whiteSpace: "nowrap",
           }}
         >
           My Experience
@@ -412,7 +438,8 @@ const About: React.FC = () => {
               <Box
                 sx={{
                   display: "flex",
-                  alignItems: "center",
+                  flexDirection: { xs: "column", md: "row" }, // Stack on small screens, row on larger screens
+                  alignItems: { xs: "flex-start", md: "center" },
                   justifyContent: "space-between",
                 }}
               >
@@ -433,6 +460,7 @@ const About: React.FC = () => {
                     fontWeight: 400,
                     fontSize: "18px",
                     color: "#C7C7C7",
+                    mt: { xs: 2, md: 0 }, // Add margin top on small screens
                   }}
                 >
                   {experience.date}

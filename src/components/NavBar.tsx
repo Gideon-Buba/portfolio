@@ -29,7 +29,7 @@ const NavBar: React.FC = () => {
   const activeStyle = {
     backgroundColor: "#D3E97A",
     color: "#0A0A0A",
-    height: "75px",
+    height: "50px",
     width: "158px",
     borderRadius: "100px",
   };
@@ -85,7 +85,7 @@ const NavBar: React.FC = () => {
           backgroundColor: "#141414",
           borderRadius: "80px",
           width: "490px",
-          height: "64px",
+          height: "44px",
           backdropFilter: "blur(10px)",
           boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
           border: "1px solid #232323",

@@ -4,11 +4,12 @@ import React from "react";
 const SocialIcon = styled("img")({
   objectFit: "contain",
   display: "block",
-  width: "25px",
-  height: "25px",
+  width: "auto",
+  height: "auto",
   backgroundColor: "#222222",
   borderRadius: "50%",
   padding: "20px",
+  cursor: "pointer",
 });
 
 const SocialIcons: React.FC = () => {
@@ -17,7 +18,6 @@ const SocialIcons: React.FC = () => {
       sx={{
         display: "flex",
         gap: "10px",
-        justifyContent: "flex-end",
         alignItems: "center",
       }}
     >
