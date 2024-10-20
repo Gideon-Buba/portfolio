@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import NavBar from "./components/NavBar";
 import { Container } from "@mui/material";
 import { About, Projects, Contact } from "./components/Navlinks";
 import Hero from "./components/Hero";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
+import NavBar from "./components/NavBar";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -26,7 +26,7 @@ const App: React.FC = () => {
         }}
       >
         <NavBar />
-
+        {/* <Projects /> */}
         <Routes>
           {/* Route for Home page */}
           <Route path="/" element={<Hero />} />
