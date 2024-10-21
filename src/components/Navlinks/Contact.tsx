@@ -66,7 +66,6 @@ const Contact: React.FC = () => {
               fontSize: isMobile ? "48px" : "76px",
               fontWeight: 400,
               color: "#FFFFFF",
-              mb: 2,
             }}
           >
             Let’s connect
@@ -79,7 +78,6 @@ const Contact: React.FC = () => {
               fontWeight: 400,
               lineHeight: isMobile ? "22px" : "27.32px",
               color: "#B3B3B3",
-              mb: 2,
             }}
           >
             Have some big idea or brand to develop and need help? Then reach out
@@ -91,7 +89,6 @@ const Contact: React.FC = () => {
               display: "flex",
               flexDirection: "column",
               gap: 2,
-              mb: 2,
             }}
           >
             <Box
