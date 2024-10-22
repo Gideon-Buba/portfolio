@@ -145,7 +145,6 @@ const Hero: React.FC = () => {
           pt: 5,
           display: "flex",
           justifyContent: "center",
-          alignItems: "center",
           flexDirection: "column",
         }}
       >
