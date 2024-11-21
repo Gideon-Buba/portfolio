@@ -58,6 +58,7 @@ const About: React.FC<AboutProps> = ({
       <Box
         sx={{
           display: "flex",
+          justifyContent: "space-between",
           flexDirection: { xs: "column", md: "row" },
           gap: { md: 22 },
           mt: "100px",

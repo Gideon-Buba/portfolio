@@ -20,7 +20,7 @@ const App: React.FC = () => {
         maxWidth={false}
         className="main-background"
         sx={{
-          maxWidth: "1330px",
+          // width: "1330px",
           margin: "0 auto",
           padding: "0 16px",
         }}

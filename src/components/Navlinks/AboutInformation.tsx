@@ -49,326 +49,293 @@ const experiences = [
   },
 ];
 
+const Section: React.FC<{ title: string; children: React.ReactNode }> = ({
+  title,
+  children,
+}) => (
+  <Box
+    sx={{
+      display: "flex",
+      justifyContent: "space-between",
+      flexDirection: { xs: "column", md: "row" },
+      gap: { xs: 4, md: 8 },
+      mt: 22,
+    }}
+  >
+    <Typography
+      sx={{
+        fontFamily: "Bebas Neue",
+        fontWeight: 400,
+        fontSize: { xs: "60px", md: "101px" },
+        lineHeight: 1,
+        whiteSpace: "nowrap",
+      }}
+    >
+      {title}
+    </Typography>
+    <Box sx={{ maxWidth: "747px", textAlign: "left" }}>{children}</Box>
+  </Box>
+);
+
 const AboutInformation: React.FC = () => {
   return (
-    <Box>
+    <Box
+      sx={
+        {
+          // display: "flex",
+          // justifyContent: "center",
+          // alignItems: "center",
+          // flexDirection: "column",
+          // width: "100%",
+        }
+      }
+    >
       {/* Education Box */}
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" }, // Stack on small screens, row on larger screens
-          gap: { xs: 4, md: 8 }, // Add gap for responsiveness
-          mt: 22,
-        }}
-      >
-        <Typography
+      <Section title="My EDUCATION">
+        <Box
           sx={{
-            fontFamily: "Bebas Neue",
-            fontWeight: 400,
-            fontSize: { xs: "60px", md: "101px" }, // responsive font size
-            lineHeight: 1,
-            whiteSpace: "nowrap",
+            display: "flex",
+            flexDirection: { xs: "column", md: "row" },
+            alignItems: { xs: "flex-start", md: "center" },
+            justifyContent: "space-between",
           }}
         >
-          My EDUCATION
-        </Typography>
-
-        {/* Description */}
-        <Box sx={{ maxWidth: "747px", textAlign: "left" }}>
-          <Box
+          <Typography
             sx={{
-              display: "flex",
-              flexDirection: { xs: "column", md: "row" }, // Stack on small screens, row on larger screens
-              alignItems: { xs: "flex-start", md: "center" },
-              justifyContent: "space-between",
+              fontFamily: "Manrope",
+              fontWeight: 500,
+              lineHeight: { xs: "33.6px", md: "44.8px" },
+              fontSize: { xs: "24px", md: "32px" },
             }}
           >
-            <Typography
-              sx={{
-                fontFamily: "Manrope",
-                fontWeight: 500,
-                lineHeight: { xs: "33.6px", md: "44.8px" },
-                fontSize: { xs: "24px", md: "32px" },
-              }}
-            >
-              VERITAS UNIVERSITY ABUJA
-            </Typography>
-
-            <Typography
-              sx={{
-                fontFamily: "Manrope",
-                fontWeight: 400,
-                fontSize: "18px",
-                color: "#C7C7C7",
-                mt: { xs: 2, md: 0 }, // Add margin top on small screens
-              }}
-            >
-              Dec. 2023
-            </Typography>
-          </Box>
-
-          <Typography sx={{ color: "#D3E97A", mb: 2 }}>
-            BSC. Computer Science
+            VERITAS UNIVERSITY ABUJA
           </Typography>
 
-          {/* Single bullet point coursework list */}
-          <Box
-            component="ul"
+          <Typography
             sx={{
-              paddingLeft: "1.5rem", // Provide space between bullet and text
-              margin: 0,
-              listStylePosition: "outside", // Ensure bullet is outside the text block
+              fontFamily: "Manrope",
+              fontWeight: 400,
+              fontSize: "18px",
+              color: "#C7C7C7",
+              mt: { xs: 2, md: 0 },
             }}
           >
-            <Box
-              component="li"
-              sx={{
-                fontFamily: "Manrope",
-                color: "#C7C7C7",
-                fontWeight: 500,
-                lineHeight: "27px",
-                fontSize: { xs: "16px", md: "18px" },
-                display: "list-item", // Ensures bullet is treated properly
-              }}
-            >
-              <strong>Coursework:</strong> Software Engineering, Web
-              Programming, Database Management, Digital Logic Design, Computer
-              Architecture, Data Structures and Algorithms
-            </Box>
+            Dec. 2023
+          </Typography>
+        </Box>
+
+        <Typography sx={{ color: "#D3E97A", mb: 2 }}>
+          BSC. Computer Science
+        </Typography>
+
+        <Box
+          component="ul"
+          sx={{
+            paddingLeft: "1.5rem",
+            margin: 0,
+            listStylePosition: "outside",
+          }}
+        >
+          <Box
+            component="li"
+            sx={{
+              fontFamily: "Manrope",
+              color: "#C7C7C7",
+              fontWeight: 500,
+              lineHeight: "27px",
+              fontSize: { xs: "16px", md: "18px" },
+              display: "list-item",
+            }}
+          >
+            <strong>Coursework:</strong> Software Engineering, Web Programming,
+            Database Management, Digital Logic Design, Computer Architecture,
+            Data Structures and Algorithms
           </Box>
         </Box>
-      </Box>
+      </Section>
 
       {/* Capabilities box */}
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" }, // Stack on small screens, row on larger screens
-          gap: { xs: 4, md: 8 }, // Add gap for responsiveness
-          mt: 22,
-        }}
-      >
-        <Typography
+      <Section title="My Capabilities">
+        <Box
           sx={{
-            fontFamily: "Bebas Neue",
-            fontWeight: 400,
-            fontSize: { xs: "60px", md: "101px" },
-            lineHeight: 1,
-            whiteSpace: "nowrap",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            mb: 3,
           }}
         >
-          My Capabilities
-        </Typography>
-
-        {/* Description */}
-        <Box sx={{ maxWidth: "747px", textAlign: "right" }}>
-          {/* Languages */}
-          <Box
+          <Typography
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              flexWrap: "wrap", // Enable wrapping
-              mb: 3, // Add some margin below
+              fontFamily: "Manrope",
+              fontWeight: 700,
+              fontSize: "20px",
+              lineHeight: "20px",
+              my: 2,
             }}
           >
-            <Typography
-              sx={{
-                fontFamily: "Manrope",
-                fontWeight: 700,
-                fontSize: "20px",
-                lineHeight: "20px",
-                my: 2,
-              }}
-            >
-              LANGUAGES
-            </Typography>
+            LANGUAGES
+          </Typography>
 
-            <Box
-              sx={{
-                display: "flex", // Keep flex for horizontal layout
-                gap: 2,
-                flexWrap: "wrap", // Enable wrapping of cards
-              }}
-            >
-              {languages.map((language, index) => (
-                <Paper
-                  key={index}
-                  variant="outlined"
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: 1.8,
-                    color: "#FFFFFF",
-                    bgcolor: "#0a0a0a",
-                    borderRadius: "100px",
-                    fontFamily: "Manrope",
-                    fontWeight: 700,
-                    fontSize: "16px",
-                    border: "1px solid #484848",
-                    whiteSpace: "nowrap",
-                    flex: "1 1 auto",
-                    maxWidth: "200px",
-                  }}
-                >
-                  {language}
-                </Paper>
-              ))}
-            </Box>
-          </Box>
-
-          {/* Frameworks */}
           <Box
             sx={{
               display: "flex",
-              // alignItems: "center",
-              justifyContent: "space-between",
+              gap: 2,
               flexWrap: "wrap",
-              gap: 10,
-              my: 8,
             }}
           >
-            <Typography
-              sx={{
-                fontFamily: "Manrope",
-                fontWeight: 700,
-                fontSize: "20px",
-                lineHeight: "20px",
-                my: 2,
-              }}
-            >
-              FRAMEWORKS
-            </Typography>
-            <Box
-              sx={{
-                width: "400px",
-                display: "flex",
-                gap: 2,
-                flexWrap: "wrap", // Enable wrapping of cards
-              }}
-            >
-              {frameworks.map((framework, index) => (
-                <Paper
-                  key={index}
-                  elevation={3}
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    padding: 1.8,
-                    color: "#FFFFFF",
-                    bgcolor: "#0a0a0a",
-                    borderRadius: "100px",
-                    fontFamily: "Manrope",
-                    fontWeight: 700,
-                    fontSize: "16px",
-                    border: "1px solid #484848",
-                    whiteSpace: "nowrap",
-                    flex: "1 1 auto",
-                    maxWidth: "200px",
-                    textTransform: "uppercase",
-                  }}
-                >
-                  {framework}
-                </Paper>
-              ))}
-            </Box>
-          </Box>
-        </Box>
-      </Box>
-
-      {/* Experience Box */}
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: { xs: "column", md: "row" }, // Stack on small screens, row on larger screens
-          gap: { xs: 4, md: 8 }, // Add gap for responsiveness
-          mt: 22,
-        }}
-      >
-        <Typography
-          sx={{
-            fontFamily: "Bebas Neue",
-            fontWeight: 400,
-            fontSize: { xs: "60px", md: "101px" }, // responsive font size
-            lineHeight: 1,
-            whiteSpace: "nowrap",
-          }}
-        >
-          My Experience
-        </Typography>
-
-        {/* Description */}
-        <Box sx={{ maxWidth: "755px", textAlign: "left" }}>
-          {experiences.map((experience, index) => (
-            <Box key={index} sx={{ mb: 4 }}>
-              <Box
+            {languages.map((language, index) => (
+              <Paper
+                key={index}
+                variant="outlined"
                 sx={{
                   display: "flex",
-                  flexDirection: { xs: "column", md: "row" }, // Stack on small screens, row on larger screens
-                  alignItems: { xs: "flex-start", md: "center" },
-                  justifyContent: "space-between",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: 1.8,
+                  color: "#FFFFFF",
+                  bgcolor: "#0a0a0a",
+                  borderRadius: "100px",
+                  fontFamily: "Manrope",
+                  fontWeight: 700,
+                  fontSize: "16px",
+                  border: "1px solid #484848",
+                  whiteSpace: "nowrap",
+                  flex: "1 1 auto",
+                  maxWidth: "200px",
                 }}
               >
-                <Typography
-                  sx={{
-                    fontFamily: "Manrope",
-                    fontWeight: 500,
-                    lineHeight: { xs: "33.6px", md: "44.8px" },
-                    fontSize: "24px",
-                  }}
-                >
-                  {experience.title}
-                </Typography>
+                {language}
+              </Paper>
+            ))}
+          </Box>
+        </Box>
 
-                <Typography
-                  sx={{
-                    fontFamily: "Manrope",
-                    fontWeight: 400,
-                    fontSize: "18px",
-                    color: "#C7C7C7",
-                    mt: { xs: 2, md: 0 }, // Add margin top on small screens
-                  }}
-                >
-                  {experience.date}
-                </Typography>
-              </Box>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: 10,
+            my: 8,
+          }}
+        >
+          <Typography
+            sx={{
+              fontFamily: "Manrope",
+              fontWeight: 700,
+              fontSize: "20px",
+              lineHeight: "20px",
+              my: 2,
+            }}
+          >
+            FRAMEWORKS
+          </Typography>
+          <Box
+            sx={{
+              width: "400px",
+              display: "flex",
+              gap: 2,
+              flexWrap: "wrap",
+            }}
+          >
+            {frameworks.map((framework, index) => (
+              <Paper
+                key={index}
+                elevation={3}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: 1.8,
+                  color: "#FFFFFF",
+                  bgcolor: "#0a0a0a",
+                  borderRadius: "100px",
+                  fontFamily: "Manrope",
+                  fontWeight: 700,
+                  fontSize: "16px",
+                  border: "1px solid #484848",
+                  whiteSpace: "nowrap",
+                  flex: "1 1 auto",
+                  maxWidth: "200px",
+                  textTransform: "uppercase",
+                }}
+              >
+                {framework}
+              </Paper>
+            ))}
+          </Box>
+        </Box>
+      </Section>
+
+      {/* Experience Box */}
+      <Section title="My Experience">
+        {experiences.map((experience, index) => (
+          <Box key={index} sx={{ mb: 4 }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: { xs: "column", md: "row" },
+                alignItems: { xs: "flex-start", md: "center" },
+                justifyContent: "space-between",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "Manrope",
+                  fontWeight: 500,
+                  lineHeight: { xs: "33.6px", md: "44.8px" },
+                  fontSize: "24px",
+                }}
+              >
+                {experience.title}
+              </Typography>
 
               <Typography
                 sx={{
-                  color: "#D3E97A",
                   fontFamily: "Manrope",
-                  fontWeight: 600,
+                  fontWeight: 400,
                   fontSize: "18px",
-                  mb: 2,
+                  color: "#C7C7C7",
+                  mt: { xs: 2, md: 0 },
                 }}
               >
-                {experience.company}
+                {experience.date}
               </Typography>
-
-              {/* Bullet point list */}
-              <Box component="ul" sx={{ paddingLeft: "1.5rem", margin: 0 }}>
-                {experience.responsibilities.map((responsibility, idx) => (
-                  <Box
-                    component="li"
-                    key={idx}
-                    sx={{
-                      fontFamily: "Manrope",
-                      color: "#C7C7C7",
-                      fontWeight: 500,
-                      lineHeight: "27px",
-                      fontSize: { xs: "16px", md: "18px" },
-                    }}
-                  >
-                    {responsibility}
-                  </Box>
-                ))}
-              </Box>
             </Box>
-          ))}
-        </Box>
-      </Box>
+
+            <Typography
+              sx={{
+                color: "#D3E97A",
+                fontFamily: "Manrope",
+                fontWeight: 600,
+                fontSize: "18px",
+                mb: 2,
+              }}
+            >
+              {experience.company}
+            </Typography>
+
+            <Box component="ul" sx={{ paddingLeft: "1.5rem", margin: 0 }}>
+              {experience.responsibilities.map((responsibility, idx) => (
+                <Box
+                  component="li"
+                  key={idx}
+                  sx={{
+                    fontFamily: "Manrope",
+                    color: "#C7C7C7",
+                    fontWeight: 500,
+                    lineHeight: "27px",
+                    fontSize: { xs: "16px", md: "18px" },
+                  }}
+                >
+                  {responsibility}
+                </Box>
+              ))}
+            </Box>
+          </Box>
+        ))}
+      </Section>
     </Box>
   );
 };
