@@ -241,13 +241,40 @@ const Contact: React.FC = () => {
               alignItems: "center",
             }}
           >
-            <SocialLinks src="/assets/icons/linkedin-icon.svg" alt="LinkedIn" />
-            <SocialLinks src="/assets/icons/github-icon.svg" alt="GitHub" />
-            <SocialLinks src="/assets/icons/twitter-icon.svg" alt="Twitter" />
-            <SocialLinks
-              src="/assets/icons/instagram-icon.svg"
-              alt="Instagram"
-            />
+            <a
+              href="https://www.linkedin.com/in/oluwaseun-akintade-620b26223/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SocialLinks
+                src="/assets/icons/linkedin-icon.svg"
+                alt="LinkedIn"
+              />
+            </a>
+            <a
+              href="https://github.com/tade-dev"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SocialLinks src="/assets/icons/github-icon.svg" alt="GitHub" />
+            </a>
+            <a
+              href="https://x.com/tadeDev_"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SocialLinks src="/assets/icons/twitter-icon.svg" alt="Twitter" />
+            </a>
+            <a
+              href="https://instagram.com/tade_zn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <SocialLinks
+                src="/assets/icons/instagram-icon.svg"
+                alt="Instagram"
+              />
+            </a>
           </Box>
         </Box>
 
