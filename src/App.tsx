@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Container } from "@mui/material";
+import { Box, Container } from "@mui/material";
 import { About, Projects, Contact } from "./components/Navlinks";
 import Hero from "./components/Hero";
 import AOS from "aos";
@@ -14,13 +14,13 @@ const App: React.FC = () => {
       once: false,
     });
   }, []);
+
   return (
     <Router>
-      <Container
-        maxWidth={false}
+      <Box
         className="main-background"
         sx={{
-          // width: "1330px",
+          width: "90%",
           margin: "0 auto",
           padding: "0 16px",
         }}
@@ -34,7 +34,7 @@ const App: React.FC = () => {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-      </Container>
+      </Box>
     </Router>
   );
 };
