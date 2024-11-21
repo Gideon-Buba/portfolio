@@ -21,8 +21,20 @@ const SocialIcons: React.FC = () => {
         alignItems: "center",
       }}
     >
-      <SocialIcon src="/assets/icons/linkedin-icon.svg" alt="LinkedIn" />
-      <SocialIcon src="/assets/icons/github-icon.svg" alt="GitHub" />
+      <a
+        href="https://www.linkedin.com/in/oluwaseun-akintade-620b26223/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <SocialIcon src="/assets/icons/linkedin-icon.svg" alt="LinkedIn" />
+      </a>
+      <a
+        href="https://github.com/tade-dev"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <SocialIcon src="/assets/icons/github-icon.svg" alt="GitHub" />
+      </a>
     </Box>
   );
 };
