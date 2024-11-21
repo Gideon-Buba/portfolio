@@ -33,6 +33,14 @@ const SnapContainer = styled(Box)(() => ({
   scrollSnapType: "y mandatory",
   overflowY: "scroll",
   height: "100vh",
+  // Hide scrollbar for WebKit browsers
+  "&::-webkit-scrollbar": {
+    display: "none",
+  },
+  // Hide scrollbar for Firefox
+  scrollbarWidth: "none",
+  // Hide scrollbar for IE and Edge
+  msOverflowStyle: "none",
 }));
 
 const SnapSection = styled(Box)(() => ({
