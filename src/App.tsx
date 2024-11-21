@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import { About, Projects, Contact } from "./components/Navlinks";
 import Hero from "./components/Hero";
 import AOS from "aos";
