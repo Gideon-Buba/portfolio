@@ -222,8 +222,8 @@ const Projects: React.FC = () => {
       ],
       client: "Turfind",
       period: "February 2023 - Present",
-      role: "Front-end Developer",
-      liveSiteLink: "https://example.com/turfing",
+      role: "Mobile Developer",
+      liveSiteLink: "https://turfind.homes/",
     },
 
     {
@@ -234,8 +234,8 @@ const Projects: React.FC = () => {
       ],
       client: "Fuel Alert",
       period: "July 2024",
-      role: "Front-end Developer",
-      liveSiteLink: "https://example.com/fuel-alert",
+      role: "Mobile Developer",
+      liveSiteLink: "https://www.fuelalertng.com/",
     },
 
     {
@@ -246,8 +246,8 @@ const Projects: React.FC = () => {
       ],
       client: "Foodnify",
       period: "December 2023 - Present",
-      role: "Front-end Developer",
-      liveSiteLink: "https://example.com/fuel-alert",
+      role: "Mobile Developer",
+      liveSiteLink: "https://www.foodnify.com/",
     },
   ];
 

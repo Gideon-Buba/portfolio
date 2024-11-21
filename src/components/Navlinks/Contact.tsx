@@ -164,7 +164,7 @@ const Contact: React.FC = () => {
                     },
                   }}
                 >
-                  akintadeseun816@gmail.com
+                  hi@tade.me
                 </Link>
                 <Link
                   sx={{
