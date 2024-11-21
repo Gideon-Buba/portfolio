@@ -36,6 +36,28 @@ const SocialLinks = styled("img")({
   cursor: "pointer",
 });
 
+// Styled TextField component
+const CustomTextField = styled(TextField)({
+  backgroundColor: "#1A1A1A",
+  marginBottom: "16px",
+  borderRadius: "4px",
+  input: { color: "#FFF" },
+
+  "& .MuiOutlinedInput-root": {
+    "& fieldset": {
+      borderColor: "#000",
+      borderWidth: "1.5px",
+      borderRadius: "8px",
+    },
+    "&:hover fieldset": {
+      borderColor: "#000",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#000",
+    },
+  },
+});
+
 const Contact: React.FC = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
@@ -45,6 +67,7 @@ const Contact: React.FC = () => {
       <Box
         sx={{
           display: "flex",
+          justifyContent: "space-between",
           flexDirection: isMobile ? "column" : "row",
           gap: isMobile ? 3 : 5,
           mt: 4,
@@ -98,7 +121,6 @@ const Contact: React.FC = () => {
                 gap: 2,
               }}
             >
-              {/* "Say hello at" text */}
               <Typography
                 sx={{
                   fontFamily: "Manrope",
@@ -240,61 +262,29 @@ const Contact: React.FC = () => {
           }}
         >
           <Label text="Name" />
-          <TextField
+          <CustomTextField
             variant="filled"
-            sx={{
-              backgroundColor: "#1A1A1A",
-              mb: 2,
-              borderRadius: "4px",
-              input: { color: "#FFF" },
-            }}
-            InputLabelProps={{
-              style: { display: "none" },
-            }}
+            InputLabelProps={{ style: { display: "none" } }}
           />
 
           <Label text="Email" />
-          <TextField
+          <CustomTextField
             variant="filled"
-            sx={{
-              backgroundColor: "#1A1A1A",
-              mb: 2,
-              borderRadius: "4px",
-              input: { color: "#FFF" },
-            }}
-            InputLabelProps={{
-              style: { display: "none" },
-            }}
+            InputLabelProps={{ style: { display: "none" } }}
           />
 
           <Label text="Subject" />
-          <TextField
+          <CustomTextField
             variant="filled"
-            sx={{
-              backgroundColor: "#1A1A1A",
-              mb: 2,
-              borderRadius: "4px",
-              input: { color: "#FFF" },
-            }}
-            InputLabelProps={{
-              style: { display: "none" },
-            }}
+            InputLabelProps={{ style: { display: "none" } }}
           />
 
           <Label text="Message" />
-          <TextField
+          <CustomTextField
             multiline
             rows={4}
             variant="filled"
-            sx={{
-              backgroundColor: "#1A1A1A",
-              mb: 2,
-              borderRadius: "4px",
-              input: { color: "#FFF" },
-            }}
-            InputLabelProps={{
-              style: { display: "none" },
-            }}
+            InputLabelProps={{ style: { display: "none" } }}
           />
 
           <Button

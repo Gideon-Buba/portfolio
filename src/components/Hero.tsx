@@ -171,9 +171,7 @@ const Hero: React.FC = () => {
       </SnapSection>
 
       {/* Contact section */}
-      <SnapSection
-        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
-      >
+      <SnapSection>
         <Contact />
       </SnapSection>
     </SnapContainer>
