@@ -185,27 +185,6 @@ const About: React.FC<AboutProps> = ({
                 </Button>
                 <SocialIcons />
               </Box>
-
-              {/* Memoji image will appear under on smaller screens */}
-              <Box
-                sx={{
-                  order: { xs: 3, md: 0 },
-                  display: { md: "none", xs: "flex" },
-                  justifyContent: { xs: "center", md: "flex-start" },
-                  width: "100%",
-                }}
-              >
-                <Box
-                  component="img"
-                  src="/assets/images/memoji.png"
-                  alt="memoji"
-                  sx={{
-                    width: { xs: "200px", sm: "300px", md: "500px" },
-                    height: { xs: "200px", sm: "300px", md: "500px" },
-                    mx: "auto",
-                  }}
-                />
-              </Box>
             </Box>
           )}
         </Box>

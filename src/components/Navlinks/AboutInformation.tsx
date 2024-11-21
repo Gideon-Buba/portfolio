@@ -59,7 +59,7 @@ const Section: React.FC<{ title: string; children: React.ReactNode }> = ({
       justifyContent: "space-between",
       flexDirection: { xs: "column", md: "row" },
       gap: { xs: 4, md: 8 },
-      mt: 22,
+      my: 5,
     }}
   >
     <Typography
