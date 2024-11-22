@@ -32,7 +32,7 @@ const HeroTextContainer = styled(Box)(() => ({
 const SnapContainer = styled(Box)(() => ({
   scrollSnapType: "y mandatory",
   overflowY: "scroll",
-  height: "100vh",
+  height: "100%",
   // Hide scrollbar for WebKit browsers
   "&::-webkit-scrollbar": {
     display: "none",
@@ -150,7 +150,6 @@ const Hero: React.FC = () => {
       {/* Projects section */}
       <SnapSection
         sx={{
-          pt: 5,
           display: "flex",
           justifyContent: "center",
           flexDirection: "column",

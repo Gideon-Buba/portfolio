@@ -79,17 +79,7 @@ const Section: React.FC<{ title: string; children: React.ReactNode }> = ({
 
 const AboutInformation: React.FC = () => {
   return (
-    <Box
-      sx={
-        {
-          // display: "flex",
-          // justifyContent: "center",
-          // alignItems: "center",
-          // flexDirection: "column",
-          // width: "100%",
-        }
-      }
-    >
+    <Box>
       {/* Education Box */}
       <Section title="My EDUCATION">
         <Box

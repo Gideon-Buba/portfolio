@@ -175,15 +175,24 @@ const About: React.FC<AboutProps> = ({
                     borderRadius: "100px",
                     color: "#000",
                     fontWeight: 600,
-                    px: 3,
-                    py: 1,
+                    fontFamily: "Manrope",
+                    fontSize: { xs: "14px", sm: "16px" },
+                    width: { xs: "212px", sm: "235px" },
                     height: "54px",
                     whiteSpace: "nowrap",
                   }}
                 >
                   Download Resume
                 </Button>
-                <SocialIcons />
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: { xs: 1, sm: 2 }, // Adjust gap between icons
+                    alignItems: "center",
+                  }}
+                >
+                  <SocialIcons />
+                </Box>
               </Box>
             </Box>
           )}
