@@ -15,6 +15,7 @@ const NavBar: React.FC = () => {
   const linkStyle = {
     textDecoration: "none",
     color: "#C7C7C7",
+    fontFamily: "Manrope",
     fontSize: "18px",
     transition: "color 0.3s ease, background-color 0.3s ease",
     borderRadius: "20px",
