@@ -148,6 +148,7 @@ const NavBar: React.FC = () => {
             style={({ isActive }) =>
               isActive ? { ...linkStyle, ...activeStyle } : linkStyle
             }
+            onClick={toggleDrawer} // Close drawer on click
           >
             About
           </NavLink>
@@ -156,6 +157,7 @@ const NavBar: React.FC = () => {
             style={({ isActive }) =>
               isActive ? { ...linkStyle, ...activeStyle } : linkStyle
             }
+            onClick={toggleDrawer} // Close drawer on click
           >
             Projects
           </NavLink>
@@ -164,6 +166,7 @@ const NavBar: React.FC = () => {
             style={({ isActive }) =>
               isActive ? { ...linkStyle, ...activeStyle } : linkStyle
             }
+            onClick={toggleDrawer} // Close drawer on click
           >
             Contact
           </NavLink>
