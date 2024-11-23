@@ -3,6 +3,11 @@ import React, { useState, useEffect } from "react";
 import SocialIcons from "../SocialIcons";
 import AboutInformation from "./AboutInformation";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Initialize AOS
+AOS.init();
 
 const DownloadIcon = (
   <Icon
@@ -199,7 +204,11 @@ const About: React.FC<AboutProps> = ({
         </Box>
       </Box>
       {/* Conditionally render AboutInformation based on the showAboutInfo prop */}
-      {localShowAboutInfo && <AboutInformation />}
+      {localShowAboutInfo && (
+        <Box data-aos="fade-down">
+          <AboutInformation />
+        </Box>
+      )}
     </Box>
   );
 };
