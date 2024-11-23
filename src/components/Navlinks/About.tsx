@@ -9,7 +9,7 @@ import "aos/dist/aos.css";
 // Initialize AOS
 AOS.init({
   duration: 1000,
-  once: false,
+  once: true,
 });
 
 const DownloadIcon = (
