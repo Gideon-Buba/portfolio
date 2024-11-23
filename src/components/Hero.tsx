@@ -138,7 +138,6 @@ const Hero: React.FC = () => {
               </Box>
             </Box>
           </HeroTextContainer>
-
           <Box
             sx={{
               display: "flex",
@@ -160,29 +159,20 @@ const Hero: React.FC = () => {
       </SnapSection>
 
       {/* Projects section */}
-      <SnapSection
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          flexDirection: "column",
-        }}
-      >
+      <SnapSection data-aos="fade-up">
         <Projects />
       </SnapSection>
 
       {/* About section */}
-      <SnapSection
-        sx={{
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-        }}
-      >
+      <SnapSection data-aos="fade-up">
         <About />
       </SnapSection>
 
       {/* Contact section */}
-      <SnapSection>
+      <SnapSection
+        data-aos="fade-up"
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      >
         <Contact />
       </SnapSection>
     </SnapContainer>

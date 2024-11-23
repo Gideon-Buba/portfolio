@@ -70,8 +70,6 @@ const Contact: React.FC = () => {
           justifyContent: "space-between",
           flexDirection: isMobile ? "column" : "row",
           gap: isMobile ? 3 : 5,
-          mt: 4,
-          mb: 6,
           paddingX: isMobile ? "2%" : "5%",
         }}
       >
