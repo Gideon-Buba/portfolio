@@ -6,6 +6,7 @@ import Hero from "./components/Hero";
 import AOS from "aos";
 import "aos/dist/aos.css"; // Import AOS styles
 import NavBar from "./components/NavBar";
+import AnimatedCursorConfig from "./components/AnimatedCursorConfig";
 
 const App: React.FC = () => {
   useEffect(() => {
@@ -26,6 +27,7 @@ const App: React.FC = () => {
         }}
       >
         <NavBar />
+        <AnimatedCursorConfig /> {/* Add the custom cursor component */}
         {/* <Projects /> */}
         <Routes>
           {/* Route for Home page */}
