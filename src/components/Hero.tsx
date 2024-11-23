@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { styled } from "@mui/system";
 import { Box, Button, Typography } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import SocialIcons from "./SocialIcons";
 import { About, Contact, Projects } from "./Navlinks";
+import AOS from "aos";
+import "aos/dist/aos.css";
+
+// Initialize AOS
+AOS.init();
 
 const HeroContainer = styled(Box)(() => ({
   width: "100%",
@@ -49,6 +54,13 @@ const SnapSection = styled(Box)(() => ({
 }));
 
 const Hero: React.FC = () => {
+  useEffect(() => {
+    AOS.init({
+      // Global settings for AOS
+      duration: 1200,
+    });
+  }, []);
+
   return (
     <SnapContainer>
       {/* Hero section */}

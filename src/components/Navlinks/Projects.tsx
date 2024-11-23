@@ -58,7 +58,7 @@ const ProjectCard: React.FC<ProjectProps> = ({
 }) => {
   return (
     <Box
-      // data-aos="fade-up" // AOS animation attribute
+      data-aos="fade-up"
       sx={{
         marginBottom: "100px",
         display: { xs: "block", md: "grid" },
