@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { styled } from "@mui/system";
 import { Box, Button, Typography } from "@mui/material";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
@@ -54,12 +54,20 @@ const SnapSection = styled(Box)(() => ({
 }));
 
 const Hero: React.FC = () => {
+  const contactRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     AOS.init({
       // Global settings for AOS
       duration: 1200,
     });
   }, []);
+
+  const handleContactMeClick = () => {
+    if (contactRef.current) {
+      contactRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <SnapContainer>
@@ -124,6 +132,7 @@ const Hero: React.FC = () => {
                   color: "#0A0A0A",
                   borderRadius: "100px",
                 }}
+                onClick={handleContactMeClick}
               >
                 CONTACT ME
               </Button>
@@ -172,6 +181,7 @@ const Hero: React.FC = () => {
       <SnapSection
         data-aos="fade-up"
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+        ref={contactRef}
       >
         <Contact />
       </SnapSection>
