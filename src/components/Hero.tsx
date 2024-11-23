@@ -34,10 +34,10 @@ const HeroTextContainer = styled(Box)(() => ({
   marginTop: "90px",
 }));
 
-const SnapContainer = styled(Box)(() => ({
-  scrollSnapType: "y mandatory",
+const Container = styled(Box)(() => ({
   overflowY: "scroll",
   height: "100%",
+  scrollBehavior: "smooth", // Ensure smooth scrolling
   // Hide scrollbar for WebKit browsers
   "&::-webkit-scrollbar": {
     display: "none",
@@ -48,8 +48,7 @@ const SnapContainer = styled(Box)(() => ({
   msOverflowStyle: "none",
 }));
 
-const SnapSection = styled(Box)(() => ({
-  scrollSnapAlign: "start",
+const Section = styled(Box)(() => ({
   minHeight: "100vh",
 }));
 
@@ -70,9 +69,9 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <SnapContainer>
+    <Container>
       {/* Hero section */}
-      <SnapSection>
+      <Section>
         <HeroContainer>
           <HeroTextContainer>
             {/* "hi, i am" text, hidden on mobile */}
@@ -165,27 +164,27 @@ const Hero: React.FC = () => {
             />
           </Box>
         </HeroContainer>
-      </SnapSection>
+      </Section>
 
       {/* Projects section */}
-      <SnapSection data-aos="fade-up">
+      <Section data-aos="fade-up">
         <Projects />
-      </SnapSection>
+      </Section>
 
       {/* About section */}
-      <SnapSection data-aos="fade-up">
+      <Section data-aos="fade-up">
         <About />
-      </SnapSection>
+      </Section>
 
       {/* Contact section */}
-      <SnapSection
+      <Section
         data-aos="fade-up"
         sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
         ref={contactRef}
       >
         <Contact />
-      </SnapSection>
-    </SnapContainer>
+      </Section>
+    </Container>
   );
 };
 
