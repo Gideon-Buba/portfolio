@@ -205,7 +205,7 @@ const About: React.FC<AboutProps> = ({
       </Box>
       {/* Conditionally render AboutInformation based on the showAboutInfo prop */}
       {localShowAboutInfo && (
-        <Box data-aos="fade-down">
+        <Box data-aos={isAboutPage ? "" : "fade-down"}>
           <AboutInformation />
         </Box>
       )}
