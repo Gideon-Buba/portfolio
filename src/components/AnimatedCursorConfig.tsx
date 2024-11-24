@@ -1,7 +1,12 @@
 import React from "react";
 import AnimatedCursor from "react-animated-cursor";
+import { isMobile } from "react-device-detect";
 
 const AnimatedCursorConfig: React.FC = () => {
+  if (isMobile) {
+    return null; // Do not render the animated cursor on mobile devices
+  }
+
   return (
     <AnimatedCursor
       innerSize={10}
