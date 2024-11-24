@@ -7,7 +7,6 @@ import { About, Contact, Projects } from "./Navlinks";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-// Initialize AOS
 AOS.init();
 
 const HeroContainer = styled(Box)(() => ({
