@@ -178,6 +178,9 @@ const About: React.FC<AboutProps> = ({
                 <Button
                   variant="contained"
                   endIcon={DownloadIcon}
+                  component="a"
+                  href="/dummy.pdf" // Update this path to your resume PDF file
+                  download="dummy.pdf" // Specify the filename for the downloaded file
                   sx={{
                     bgcolor: "#D3E97A",
                     borderRadius: "100px",
