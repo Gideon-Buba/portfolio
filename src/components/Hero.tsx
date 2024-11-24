@@ -6,6 +6,7 @@ import SocialIcons from "./SocialIcons";
 import { About, Contact, Projects } from "./Navlinks";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { createBouncyText } from "./utils/bouncyText";
 
 AOS.init();
 
@@ -83,7 +84,7 @@ const Hero: React.FC = () => {
                 display: { xs: "none", md: "block" }, // Hide on mobile (xs)
               }}
             >
-              hi, i am <br />
+              {createBouncyText("hi, i am")} <br />
             </Typography>
 
             <Typography
@@ -94,7 +95,7 @@ const Hero: React.FC = () => {
                 lineHeight: 1,
               }}
             >
-              AKINTADE OLUWASEUN
+              {createBouncyText("AKINTADE OLUWASEUN")}
             </Typography>
 
             <Typography

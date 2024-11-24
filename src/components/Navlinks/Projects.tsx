@@ -1,6 +1,7 @@
 import { Box, Typography, Divider } from "@mui/material";
 import React from "react";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
+import { createBouncyText } from "../utils/bouncyText";
 
 // Define the type for the project props
 interface ProjectProps {
@@ -274,7 +275,7 @@ const Projects: React.FC = () => {
           color: "#FFFFFF",
         }}
       >
-        Featured Projects
+        {createBouncyText("FEATURED PROJECTS")}
       </Typography>
 
       {/* Map over project data and render ProjectCard components */}
