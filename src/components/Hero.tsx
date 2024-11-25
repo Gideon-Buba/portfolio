@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { styled } from "@mui/system";
 import { Box, Button, Typography } from "@mui/material";
-import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import SocialIcons from "./SocialIcons";
 import { About, Contact, Projects } from "./Navlinks";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { createBouncyText } from "./utils/bouncyText";
+import ArrowIcon from "/assets/images/arrow.png";
 
 AOS.init();
 
@@ -52,8 +52,55 @@ const Section = styled(Box)(() => ({
   minHeight: "100vh",
 }));
 
+interface BlackHoleIconProps {
+  isHovered: boolean;
+}
+
+const BlackHoleIcon: React.FC<BlackHoleIconProps> = ({ isHovered }) => (
+  <Box
+    sx={{
+      position: "relative",
+      width: "16px",
+      height: "16px",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="black-hole-icon"
+    >
+      <circle cx="8" cy="8" r="4" fill="black" />
+    </svg>
+    {isHovered && (
+      <Box
+        sx={{
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          width: "16px",
+          height: "16px",
+        }}
+      >
+        <img
+          src={ArrowIcon}
+          alt="arrow"
+          style={{ width: "100%", height: "100%" }}
+        />
+      </Box>
+    )}
+  </Box>
+);
+
 const Hero: React.FC = () => {
   const contactRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
   useEffect(() => {
     AOS.init({
@@ -118,7 +165,7 @@ const Hero: React.FC = () => {
             <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
               <Button
                 variant="contained"
-                endIcon={<ArrowOutwardIcon />}
+                endIcon={<BlackHoleIcon isHovered={isHovered} />}
                 disableElevation
                 sx={{
                   width: "187px",
@@ -130,7 +177,16 @@ const Hero: React.FC = () => {
                   lineHeight: "27px",
                   color: "#0A0A0A",
                   borderRadius: "100px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "10px",
+                  "&:hover .black-hole-icon": {
+                    transform: "scale(4)",
+                    transition: "transform 0.3s ease",
+                  },
                 }}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
                 onClick={handleContactMeClick}
               >
                 CONTACT ME
