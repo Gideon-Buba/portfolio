@@ -6,7 +6,7 @@ import { About, Contact, Projects } from "./Navlinks";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { createBouncyText } from "./utils/bouncyText";
-import ArrowIcon from "/assets/images/arrow.png";
+import ArrowIcon from "/assets/images/arrow.png"; // Import your custom arrow icon
 
 AOS.init();
 
@@ -57,45 +57,35 @@ interface BlackHoleIconProps {
 }
 
 const BlackHoleIcon: React.FC<BlackHoleIconProps> = ({ isHovered }) => (
-  <Box
-    sx={{
-      position: "relative",
-      width: "16px",
-      height: "16px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-    }}
+  <svg
+    width="15"
+    height="15"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className="black-hole-icon"
   >
-    <svg
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className="black-hole-icon"
-    >
-      <circle cx="8" cy="8" r="4" fill="black" />
-    </svg>
+    <circle cx="12" cy="12" r="8" fill="black" />
     {isHovered && (
-      <Box
-        sx={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: "16px",
-          height: "16px",
-        }}
-      >
-        <img
-          src={ArrowIcon}
-          alt="arrow"
-          style={{ width: "100%", height: "100%" }}
-        />
-      </Box>
+      <foreignObject x="8" y="8" width="8" height="8">
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "100%",
+            height: "100%",
+          }}
+        >
+          <img
+            src={ArrowIcon}
+            alt="arrow"
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
+          />
+        </Box>
+      </foreignObject>
     )}
-  </Box>
+  </svg>
 );
 
 const Hero: React.FC = () => {
