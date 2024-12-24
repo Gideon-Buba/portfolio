@@ -4,11 +4,9 @@ import React from "react";
 const SocialIcon = styled("img")(({ theme }) => ({
   objectFit: "contain",
   display: "block",
-  width: "25px",
-  height: "25px",
+  width: "auto",
+  height: "auto",
   backgroundColor: "#222222",
-  borderRadius: "50%",
-  // padding: "20px",
   cursor: "pointer",
   [theme.breakpoints.down("sm")]: {
     padding: "10px", // Reduce padding on smaller screens
@@ -61,6 +59,26 @@ const SocialIcons: React.FC = () => {
           rel="noopener noreferrer"
         >
           <SocialIcon src="/assets/icons/github-icon.svg" alt="GitHub" />
+        </a>
+      </Box>
+
+      <Box
+        sx={{
+          bgcolor: "#222222",
+          height: "54px",
+          width: "54px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: "50%",
+        }}
+      >
+        <a
+          href="https://twitter.com/your-twitter-handle"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <SocialIcon src="/assets/icons/twitter-icon.svg" alt="Twitter" />
         </a>
       </Box>
     </Box>

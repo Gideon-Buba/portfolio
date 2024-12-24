@@ -2,6 +2,7 @@ import { Box, Typography, Divider } from "@mui/material";
 import React from "react";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { createBouncyText } from "../utils/bouncyText";
+import { FaGooglePlay, FaAppStore } from "react-icons/fa"; // Import the icons from react-icons
 
 // Define the type for the project props
 interface ProjectProps {
@@ -12,6 +13,8 @@ interface ProjectProps {
   period: string;
   role: string;
   liveSiteLink: string;
+  playStoreLink: string;
+  appStoreLink: string;
 }
 
 // Reusable ProjectDetail component
@@ -56,6 +59,8 @@ const ProjectCard: React.FC<ProjectProps> = ({
   period,
   role,
   liveSiteLink,
+  playStoreLink,
+  appStoreLink,
 }) => {
   return (
     <Box
@@ -205,6 +210,60 @@ const ProjectCard: React.FC<ProjectProps> = ({
           VIEW LIVE SITE
           <ArrowOutwardIcon className="hoverIcon" sx={{ fontSize: "20px" }} />
         </Typography>
+
+        {/* Store links */}
+        <Box
+          sx={{
+            display: "flex",
+            gap: "10px",
+            alignItems: "center",
+            mt: "20px",
+          }}
+        >
+          <Box
+            sx={{
+              bgcolor: "#222222",
+              height: "54px",
+              width: "54px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "50%",
+            }}
+          >
+            <a
+              href={playStoreLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "inherit", display: "flex" }}
+            >
+              <FaGooglePlay size={25} color="#D3E97A" />{" "}
+              {/* Change the color here */}
+            </a>
+          </Box>
+
+          <Box
+            sx={{
+              bgcolor: "#222222",
+              height: "54px",
+              width: "54px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              borderRadius: "50%",
+            }}
+          >
+            <a
+              href={appStoreLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "inherit", display: "flex" }}
+            >
+              <FaAppStore size={25} color="#D3E97A" />{" "}
+              {/* Change the color here */}
+            </a>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
@@ -225,6 +284,9 @@ const Projects: React.FC = () => {
       period: "February 2023 - Present",
       role: "Mobile Developer",
       liveSiteLink: "https://turfind.homes/",
+      playStoreLink:
+        "https://play.google.com/store/apps/details?id=com.turfind.turfind",
+      appStoreLink: "https://apps.apple.com/us/app/turfind/id1234567890",
     },
 
     {
@@ -237,6 +299,9 @@ const Projects: React.FC = () => {
       period: "July 2024",
       role: "Mobile Developer",
       liveSiteLink: "https://www.fuelalertng.com/",
+      playStoreLink:
+        "https://play.google.com/store/apps/details?id=com.dekon.fuelalert&pcampaignid=web_share",
+      appStoreLink: "https://apps.apple.com/us/app/fuelalert/id1234567890",
     },
 
     {
@@ -249,6 +314,37 @@ const Projects: React.FC = () => {
       period: "December 2023 - Present",
       role: "Mobile Developer",
       liveSiteLink: "https://www.foodnify.com/",
+      playStoreLink:
+        "https://play.google.com/store/apps/details?id=com.foodnify.foodnify",
+      appStoreLink:
+        "https://play.google.com/store/apps/details?id=app.foodnify.com&pcampaignid=web_share",
+    },
+
+    {
+      thumbnail: "/assets/images/lawpoly.png",
+      projectTitle: "Law Poly",
+      caption: ["Lorem Ipsum"],
+      client: "Law Poly",
+      period: "December 2023 - Present",
+      role: "Mobile Developer",
+      liveSiteLink: "https://www.foodnify.com/",
+      playStoreLink:
+        "https://play.google.com/store/apps/details?id=com.lawploy.lawploy&pcampaignid=web_share",
+      appStoreLink: "#",
+    },
+
+    {
+      thumbnail: "/assets/images/slayt.png",
+      projectTitle: "Slayt",
+      caption: ["Lorem Ipsum"],
+      client: "Slayt",
+      period: "December 2023 - Present",
+      role: "Mobile Developer",
+      liveSiteLink: "https://www.foodnify.com/",
+      playStoreLink:
+        "https://play.google.com/store/apps/details?id=com.slayt&pcampaignid=web_share",
+      appStoreLink:
+        "https://apps.apple.com/us/app/slayt-closer-together/id6470950940",
     },
   ];
 
