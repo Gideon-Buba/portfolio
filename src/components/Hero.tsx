@@ -109,7 +109,7 @@ const Hero: React.FC = () => {
     <Container>
       {/* Hero section */}
       <Section>
-        <HeroContainer>
+        <HeroContainer data-aos="fade-up">
           <HeroTextContainer>
             {/* "hi, i am" text, hidden on mobile */}
             <Typography
