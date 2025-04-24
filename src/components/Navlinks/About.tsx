@@ -112,11 +112,10 @@ const About: React.FC<AboutProps> = ({
                 mb: 3,
               }}
             >
-              I am a mobile app developer with 3 years of experience in creating
-              high-quality apps using Flutter. Passionate about earning new
-              technologies and solving problems. Skilled in teamwork and
-              delivering user-friendly, scalable solutions in agile
-              environments.
+              I am a web developer with experience in creating high-quality web
+              apps. Passionate about earning new technologies and solving
+              problems. Skilled in teamwork and delivering user-friendly,
+              scalable solutions in agile environments.
             </Typography>
             {!localShowButtons && !isAboutPage && (
               <Box>

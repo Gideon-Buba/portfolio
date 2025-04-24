@@ -17,36 +17,27 @@ const frameworks = [
 
 const experiences = [
   {
-    title: "Mobile App Developer (Remote) - Flutter",
-    company: "Zabira Technologies",
-    date: "Sept 2024 - Present",
-    responsibilities: [
-      "Developed and maintained core features for Zabira's crypto and gift card trading app using Flutter, enhancing user experience and app performance.",
-      "Revamped applications navigation system and implemented custom routes to improve app's seamlessness and boost performance.",
-      "Collaborated with cross-functional teams to optimize mobile app architecture, reducing load times and improving overall app efficiency.",
-      "Integrated secure APIs to facilitate seamless crypto transactions and real-time gift card trading functionality.",
-    ],
+    title: "Frontend Developer (Remote)",
+    company: "Co-creation hub Africa (CCHUB)",
+    date: "August - November 2024",
+    responsibilities: ["X"],
   },
   {
-    title: "Mobile App Developer (Hybrid) - Flutter, UIKit, SwiftUi",
-    company: "Scnip Capitol Ltd",
-    date: "March 2024 - July 2024",
-    responsibilities: [
-      "Led the development of different mobile applications using Flutter, UIKit, and SwiftUI, delivering high-performance apps for iOS and Android platforms.",
-      "Collaborated with design and backend teams to implement intuitive user interfaces and seamless user experiences across financial services.",
-      " Optimized app performance and reduced crash rates by implementing best coding practices and continuous testing for both Flutter and native iOS features",
-    ],
+    title: "Frontend Developer (On-site)",
+    company: "Publica AI",
+    date: "November 2024 - Present",
+    responsibilities: ["X"],
   },
-  {
-    title: "Mobile Developer Intern - Flutter, Node.js, Firebase",
-    company: "AITECH",
-    date: "June 2023 - September 2023",
-    responsibilities: [
-      "Gained hands-on experience with Flutter, React Native, and Node.js by developing and maintaining mobile applications during the internship.",
-      "Assisted in building cross-platform apps and integrating backend services, strengthening my understanding of mobile development frameworks and server-side technologies.",
-      "Collaborated with senior developers to troubleshoot and optimize code, enhancing my problem-solving skills and understanding of mobile app architecture",
-    ],
-  },
+  // {
+  //   title: "Mobile Developer Intern - Flutter, Node.js, Firebase",
+  //   company: "AITECH",
+  //   date: "June 2023 - September 2023",
+  //   responsibilities: [
+  //     "Gained hands-on experience with Flutter, React Native, and Node.js by developing and maintaining mobile applications during the internship.",
+  //     "Assisted in building cross-platform apps and integrating backend services, strengthening my understanding of mobile development frameworks and server-side technologies.",
+  //     "Collaborated with senior developers to troubleshoot and optimize code, enhancing my problem-solving skills and understanding of mobile app architecture",
+  //   ],
+  // },
 ];
 
 const Section: React.FC<{ title: string; children: React.ReactNode }> = ({
@@ -81,7 +72,7 @@ const AboutInformation: React.FC = () => {
   return (
     <Box>
       {/* Education Box */}
-      <Section title="My EDUCATION">
+      <Section title="MY EDUCATION">
         <Box
           sx={{
             display: "flex",
@@ -98,7 +89,7 @@ const AboutInformation: React.FC = () => {
               fontSize: { xs: "24px", md: "32px" },
             }}
           >
-            VERITAS UNIVERSITY ABUJA
+            BINGHAM UNIVERSITY
           </Typography>
 
           <Typography
@@ -137,9 +128,10 @@ const AboutInformation: React.FC = () => {
               display: "list-item",
             }}
           >
-            <strong>Coursework:</strong> Software Engineering, Web Programming,
+            <strong>Coursework:</strong> Software Engineering, Web Development,
             Database Management, Digital Logic Design, Computer Architecture,
-            Data Structures and Algorithms
+            Data Structures and Algorithms, Mathematics, Statistics, Object
+            Oriented Programming
           </Box>
         </Box>
       </Section>
