@@ -7,6 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { createBouncyText } from "./utils/bouncyText";
 import ArrowIcon from "/assets/images/arrow.png";
+import Avatar from "./Avatar"; // Import the Avatar component
 
 AOS.init();
 
@@ -199,15 +200,7 @@ const Hero: React.FC = () => {
               justifyContent: "center",
             }}
           >
-            <Box
-              component="img"
-              src="/assets/images/memoji.png"
-              alt="memoji"
-              sx={{
-                width: { xs: "200px", sm: "300px", md: "500px" },
-                height: { xs: "200px", sm: "300px", md: "500px" },
-              }}
-            />
+            <Avatar /> {/* Use the Avatar component here */}
           </Box>
         </HeroContainer>
       </Section>
