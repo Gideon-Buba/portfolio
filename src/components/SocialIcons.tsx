@@ -34,7 +34,7 @@ const SocialIcons: React.FC = () => {
         }}
       >
         <a
-          href="https://www.linkedin.com/in/oluwaseun-akintade-620b26223/"
+          href="https://www.linkedin.com/in/gideon-buba-34aaa2190/"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -54,31 +54,11 @@ const SocialIcons: React.FC = () => {
         }}
       >
         <a
-          href="https://github.com/tade-dev"
+          href="https://github.com/Gideon-Buba"
           target="_blank"
           rel="noopener noreferrer"
         >
           <SocialIcon src="/assets/icons/github-icon.svg" alt="GitHub" />
-        </a>
-      </Box>
-
-      <Box
-        sx={{
-          bgcolor: "#222222",
-          height: "54px",
-          width: "54px",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: "50%",
-        }}
-      >
-        <a
-          href="https://twitter.com/your-twitter-handle"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <SocialIcon src="/assets/icons/twitter-icon.svg" alt="Twitter" />
         </a>
       </Box>
     </Box>

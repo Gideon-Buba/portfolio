@@ -162,7 +162,7 @@ const Contact: React.FC = () => {
                     },
                   }}
                 >
-                  hi@tade.me
+                  bubaambore@gmail.com
                 </Link>
                 <Link
                   sx={{
@@ -188,7 +188,7 @@ const Contact: React.FC = () => {
                     },
                   }}
                 >
-                  +234 816 342 1203
+                  +234 8187909619
                 </Link>
               </Box>
             </Box>
@@ -206,6 +206,7 @@ const Contact: React.FC = () => {
           >
             For more info, here’s my{" "}
             <Link
+              href="https://docs.google.com/document/d/1IFbsc8D6tuv7o4zrPy92TuLFJe1PsHMquOw_e4QAOys/edit?tab=t.0"
               sx={{
                 fontFamily: "Manrope",
                 fontSize: isMobile ? "14px" : "18px",
@@ -240,7 +241,7 @@ const Contact: React.FC = () => {
             }}
           >
             <a
-              href="https://www.linkedin.com/in/oluwaseun-akintade-620b26223/"
+              href="https://www.linkedin.com/in/gideon-buba-34aaa2190/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -250,29 +251,19 @@ const Contact: React.FC = () => {
               />
             </a>
             <a
-              href="https://github.com/tade-dev"
+              href="https://github.com/Gideon-Buba"
               target="_blank"
               rel="noopener noreferrer"
             >
               <SocialLinks src="/assets/icons/github-icon.svg" alt="GitHub" />
             </a>
-            <a
+            {/* <a
               href="https://x.com/tadeDev_"
               target="_blank"
               rel="noopener noreferrer"
             >
               <SocialLinks src="/assets/icons/twitter-icon.svg" alt="Twitter" />
-            </a>
-            <a
-              href="https://instagram.com/tade_zn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <SocialLinks
-                src="/assets/icons/instagram-icon.svg"
-                alt="Instagram"
-              />
-            </a>
+            </a> */}
           </Box>
         </Box>
 
