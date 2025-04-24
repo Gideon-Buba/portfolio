@@ -2,7 +2,6 @@ import { Box, Typography, Divider } from "@mui/material";
 import React from "react";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { createBouncyText } from "../utils/bouncyText";
-import { FaGooglePlay, FaAppStore } from "react-icons/fa"; // Import the icons from react-icons
 
 // Define the type for the project props
 interface ProjectProps {
@@ -13,8 +12,6 @@ interface ProjectProps {
   period: string;
   role: string;
   liveSiteLink: string;
-  playStoreLink: string;
-  appStoreLink: string;
 }
 
 // Reusable ProjectDetail component
@@ -59,8 +56,6 @@ const ProjectCard: React.FC<ProjectProps> = ({
   period,
   role,
   liveSiteLink,
-  playStoreLink,
-  appStoreLink,
 }) => {
   return (
     <Box
@@ -210,60 +205,6 @@ const ProjectCard: React.FC<ProjectProps> = ({
           VIEW LIVE SITE
           <ArrowOutwardIcon className="hoverIcon" sx={{ fontSize: "20px" }} />
         </Typography>
-
-        {/* Store links */}
-        <Box
-          sx={{
-            display: "flex",
-            gap: "10px",
-            alignItems: "center",
-            mt: "20px",
-          }}
-        >
-          <Box
-            sx={{
-              bgcolor: "#222222",
-              height: "54px",
-              width: "54px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: "50%",
-            }}
-          >
-            <a
-              href={playStoreLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "inherit", display: "flex" }}
-            >
-              <FaGooglePlay size={25} color="#D3E97A" />{" "}
-              {/* Change the color here */}
-            </a>
-          </Box>
-
-          <Box
-            sx={{
-              bgcolor: "#222222",
-              height: "54px",
-              width: "54px",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: "50%",
-            }}
-          >
-            <a
-              href={appStoreLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{ color: "inherit", display: "flex" }}
-            >
-              <FaAppStore size={25} color="#D3E97A" />{" "}
-              {/* Change the color here */}
-            </a>
-          </Box>
-        </Box>
       </Box>
     </Box>
   );
@@ -273,79 +214,57 @@ const ProjectCard: React.FC<ProjectProps> = ({
 const Projects: React.FC = () => {
   const projectData: ProjectProps[] = [
     {
-      thumbnail: "/assets/images/turfind.png",
-      projectTitle: "Turfind",
-      caption: [
-        "Developed a secure end-to-end real estate payment system with escrow services to protect transactions.",
-        "Engineered a dynamic marketplace for property listings and integrated 3D virtual tours.",
-        "Implemented a robust chat feature for direct communication between buyers and sellers, ensuring real-time interaction.",
-      ],
-      client: "Turfind",
-      period: "February 2023 - Present",
-      role: "Mobile Developer",
-      liveSiteLink: "https://turfind.homes/",
-      playStoreLink:
-        "https://play.google.com/store/apps/details?id=com.turfind.turfind",
-      appStoreLink: "https://apps.apple.com/us/app/turfind/id1234567890",
+      thumbnail: "/assets/images/tradeintelligence.png",
+      projectTitle: "Trade intelligence",
+      caption: ["x", "x", "x"],
+      client: "Co-creation hub (CCHUB)",
+      period: "August - November 2024",
+      role: "Frontend Developer",
+      liveSiteLink: "https://trade-intelligence.ncair.nitda.gov.ng/",
+      // playStoreLink:
+      //   "https://play.google.com/store/apps/details?id=com.turfind.turfind",
+      // appStoreLink: "https://apps.apple.com/us/app/turfind/id1234567890",
     },
 
     {
-      thumbnail: "/assets/images/fuel-alert.png",
-      projectTitle: "Fuel Alert",
-      caption: [
-        "Developed a mobile application for users to compare prices, receive real-time alerts, and earn rewards by contributing to their communities",
-      ],
-      client: "Fuel Alert",
-      period: "July 2024",
-      role: "Mobile Developer",
-      liveSiteLink: "https://www.fuelalertng.com/",
-      playStoreLink:
-        "https://play.google.com/store/apps/details?id=com.dekon.fuelalert&pcampaignid=web_share",
-      appStoreLink: "https://apps.apple.com/us/app/fuelalert/id1234567890",
+      thumbnail: "/assets/images/3mtt.png",
+      projectTitle: "3mtt Learning Platform",
+      caption: ["x", "x", "x"],
+      client: "Publica AI",
+      period: "November - Present",
+      role: "Frontend Developer",
+      liveSiteLink: "https://3mtt.ncair.nitda.gov.ng/",
     },
 
     {
-      thumbnail: "/assets/images/foodnify.png",
-      projectTitle: "Foodnify",
-      caption: [
-        "Developed an all-in-one mobile application which enables users to learn how to make your favorite meals, share recipes, order homemade food and meet great chefs and caterers.",
-      ],
-      client: "Foodnify",
+      thumbnail: "/assets/images/publicaai.png",
+      projectTitle: "Publica AI website",
+      caption: ["x"],
+      client: "Publica AI",
       period: "December 2023 - Present",
-      role: "Mobile Developer",
-      liveSiteLink: "https://www.foodnify.com/",
-      playStoreLink:
-        "https://play.google.com/store/apps/details?id=com.foodnify.foodnify",
-      appStoreLink:
-        "https://play.google.com/store/apps/details?id=app.foodnify.com&pcampaignid=web_share",
+      role: "Frontend Developer",
+      liveSiteLink: "https://www.publicaai.com/",
     },
 
     {
-      thumbnail: "/assets/images/lawpoly.png",
-      projectTitle: "Law Poly",
-      caption: ["Lorem Ipsum"],
-      client: "Law Poly",
-      period: "December 2023 - Present",
-      role: "Mobile Developer",
-      liveSiteLink: "https://www.foodnify.com/",
-      playStoreLink:
-        "https://play.google.com/store/apps/details?id=com.lawploy.lawploy&pcampaignid=web_share",
-      appStoreLink: "#",
+      thumbnail: "/assets/images/airflow.png",
+      projectTitle: "Airflow",
+      caption: ["It is a smart flight booking platform."],
+      client: "Publica AI, Airflow",
+      period: "February - March 2025",
+      role: "Frontend Developer",
+      liveSiteLink: "https://airflow.publicaai.com/",
     },
 
-    {
-      thumbnail: "/assets/images/slayt.png",
-      projectTitle: "Slayt",
-      caption: ["Lorem Ipsum"],
-      client: "Slayt",
-      period: "December 2023 - Present",
-      role: "Mobile Developer",
-      liveSiteLink: "https://www.foodnify.com/",
-      playStoreLink:
-        "https://play.google.com/store/apps/details?id=com.slayt&pcampaignid=web_share",
-      appStoreLink:
-        "https://apps.apple.com/us/app/slayt-closer-together/id6470950940",
-    },
+    // {
+    //   thumbnail: "/assets/images/slayt.png",
+    //   projectTitle: "Slayt",
+    //   caption: ["Lorem Ipsum"],
+    //   client: "Slayt",
+    //   period: "December 2023 - Present",
+    //   role: "Mobile Developer",
+    //   liveSiteLink: "https://www.foodnify.com/",
+    // },
   ];
 
   return (
