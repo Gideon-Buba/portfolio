@@ -1,15 +1,17 @@
 import { Box, styled } from "@mui/material";
 import React from "react";
 
-const SocialIcon = styled("img")({
+const SocialIcon = styled("img")(({ theme }) => ({
   objectFit: "contain",
   display: "block",
-  width: "25px",
-  height: "25px",
+  width: "auto",
+  height: "auto",
   backgroundColor: "#222222",
-  borderRadius: "50%",
-  padding: "20px",
-});
+  cursor: "pointer",
+  [theme.breakpoints.down("sm")]: {
+    padding: "10px", // Reduce padding on smaller screens
+  },
+}));
 
 const SocialIcons: React.FC = () => {
   return (
@@ -17,12 +19,48 @@ const SocialIcons: React.FC = () => {
       sx={{
         display: "flex",
         gap: "10px",
-        justifyContent: "flex-end",
         alignItems: "center",
       }}
     >
-      <SocialIcon src="/assets/icons/linkedin-icon.svg" alt="LinkedIn" />
-      <SocialIcon src="/assets/icons/github-icon.svg" alt="GitHub" />
+      <Box
+        sx={{
+          bgcolor: "#222222",
+          height: "54px",
+          width: "54px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: "50%",
+        }}
+      >
+        <a
+          href="https://www.linkedin.com/in/gideon-buba-34aaa2190/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <SocialIcon src="/assets/icons/linkedin-icon.svg" alt="LinkedIn" />
+        </a>
+      </Box>
+
+      <Box
+        sx={{
+          bgcolor: "#222222",
+          height: "54px",
+          width: "54px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: "50%",
+        }}
+      >
+        <a
+          href="https://github.com/Gideon-Buba"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <SocialIcon src="/assets/icons/github-icon.svg" alt="GitHub" />
+        </a>
+      </Box>
     </Box>
   );
 };
