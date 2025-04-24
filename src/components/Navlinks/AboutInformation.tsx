@@ -1,19 +1,18 @@
 import React from "react";
 import { Box, Paper, Typography } from "@mui/material";
 
-const languages = ["JAVASCRIPT", "SWIFT", "DART"];
+const languages = ["JAVASCRIPT", "TYPESCRIPT", "SQL", "GOLANG"];
 
 const frameworks = [
-  "Flutter",
-  "UIKit",
-  "SwiftUI",
-  "Flutter flow",
-  "Android Studio",
-  "Xcode",
-  "React Native",
-  "Firebase",
-  "Google Api’s",
-  "gemini",
+  "React",
+  "Tailwind",
+  "Express",
+  "NestJS",
+  "Tailwind CSS",
+  "Bootstrap",
+  "Material-UI",
+  "Jest",
+  "Mocha",
 ];
 
 const experiences = [

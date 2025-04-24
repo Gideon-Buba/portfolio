@@ -6,7 +6,7 @@ import { About, Contact, Projects } from "./Navlinks";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { createBouncyText } from "./utils/bouncyText";
-import ArrowIcon from "/assets/images/arrow.png"; // Import your custom arrow icon
+import ArrowIcon from "/assets/images/arrow.png";
 
 AOS.init();
 
@@ -132,7 +132,7 @@ const Hero: React.FC = () => {
                 lineHeight: 1,
               }}
             >
-              {createBouncyText("AKINTADE OLUWASEUN")}
+              {createBouncyText("GIDEON BUBA")}
             </Typography>
 
             <Typography
@@ -145,8 +145,8 @@ const Hero: React.FC = () => {
                 textWrap: "word-break",
               }}
             >
-              I am a mobile app developer with 3 years of experience in creating
-              high-quality apps using Flutter. Passionate about learning new
+              I am a full-stack developer with experience in creating
+              high-quality web applications. Passionate about learning new
               technologies and solving problems. Skilled in teamwork and
               delivering user-friendly, scalable solutions in agile
               environments.
