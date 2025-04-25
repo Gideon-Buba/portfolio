@@ -175,6 +175,11 @@ const AboutInformation: React.FC = () => {
                   whiteSpace: "nowrap",
                   flex: "1 1 auto",
                   maxWidth: "200px",
+                  ":hover": {
+                    bgcolor: "#D3E97A",
+                    color: "#0A0A0A",
+                    transition: "all 0.3s ease-in-out",
+                  },
                 }}
               >
                 {language}
@@ -231,6 +236,11 @@ const AboutInformation: React.FC = () => {
                   flex: "1 1 auto",
                   maxWidth: "200px",
                   textTransform: "uppercase",
+                  ":hover": {
+                    bgcolor: "#D3E97A",
+                    color: "#0A0A0A",
+                    transition: "all 0.3s ease-in-out",
+                  },
                 }}
               >
                 {framework}
