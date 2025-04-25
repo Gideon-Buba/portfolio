@@ -97,8 +97,8 @@ const About: React.FC<AboutProps> = ({
               mb: 3,
             }}
           >
-            I am a mobile app developer based in Abuja. Has Computer Science
-            background.
+            I am a web developer based in Abuja with a background in Computer
+            Science.
           </Typography>
 
           <Box sx={{ display: "flex", flexDirection: "column" }}>

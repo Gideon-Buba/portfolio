@@ -249,7 +249,7 @@ const Projects: React.FC = () => {
     {
       thumbnail: "/assets/images/airflow.png",
       projectTitle: "Airflow",
-      caption: ["It is a smart flight booking platform."],
+      caption: ["It is a smart flight booking platform with AI."],
       client: "Publica AI, Airflow",
       period: "February - March 2025",
       role: "Frontend Developer",

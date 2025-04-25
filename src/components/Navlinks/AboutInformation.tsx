@@ -28,16 +28,6 @@ const experiences = [
     date: "November 2024 - Present",
     responsibilities: ["X"],
   },
-  // {
-  //   title: "Mobile Developer Intern - Flutter, Node.js, Firebase",
-  //   company: "AITECH",
-  //   date: "June 2023 - September 2023",
-  //   responsibilities: [
-  //     "Gained hands-on experience with Flutter, React Native, and Node.js by developing and maintaining mobile applications during the internship.",
-  //     "Assisted in building cross-platform apps and integrating backend services, strengthening my understanding of mobile development frameworks and server-side technologies.",
-  //     "Collaborated with senior developers to troubleshoot and optimize code, enhancing my problem-solving skills and understanding of mobile app architecture",
-  //   ],
-  // },
 ];
 
 const Section: React.FC<{ title: string; children: React.ReactNode }> = ({
