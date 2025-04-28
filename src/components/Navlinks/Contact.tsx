@@ -42,6 +42,7 @@ const CustomTextField = styled(TextField)({
   marginBottom: "16px",
   borderRadius: "4px",
   input: { color: "#FFF" },
+  textarea: { color: "#FFF" },
 
   "& .MuiOutlinedInput-root": {
     "& fieldset": {
@@ -207,6 +208,7 @@ const Contact: React.FC = () => {
             For more info, here’s my{" "}
             <Link
               href="https://docs.google.com/document/d/1IFbsc8D6tuv7o4zrPy92TuLFJe1PsHMquOw_e4QAOys/edit?tab=t.0"
+              target="_blank"
               sx={{
                 fontFamily: "Manrope",
                 fontSize: isMobile ? "14px" : "18px",
@@ -257,13 +259,6 @@ const Contact: React.FC = () => {
             >
               <SocialLinks src="/assets/icons/github-icon.svg" alt="GitHub" />
             </a>
-            {/* <a
-              href="https://x.com/tadeDev_"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <SocialLinks src="/assets/icons/twitter-icon.svg" alt="Twitter" />
-            </a> */}
           </Box>
         </Box>
 

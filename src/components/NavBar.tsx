@@ -54,7 +54,7 @@ const NavBar: React.FC = () => {
             fontSize: "37px",
           }}
         >
-          TADE.ME
+          GIDEON
         </Typography>
       </NavLink>
 
