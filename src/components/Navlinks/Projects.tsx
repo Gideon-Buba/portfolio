@@ -80,13 +80,20 @@ const ProjectCard: React.FC<ProjectProps> = ({
           alignItems: "center",
           justifyContent: "center",
           overflow: "hidden",
+          position: "relative",
         }}
       >
         <Box
           component="img"
           src={thumbnail}
           alt={projectTitle}
-          sx={{ width: "488px", maxWidth: "488px", height: "auto" }}
+          sx={{
+            width: "100%",
+            height: "100%",
+            objectFit: "contain",
+            maxWidth: "488px",
+            maxHeight: "600px",
+          }}
         />
       </Box>
 
