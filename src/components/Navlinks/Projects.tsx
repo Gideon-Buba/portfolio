@@ -215,31 +215,39 @@ const Projects: React.FC = () => {
   const projectData: ProjectProps[] = [
     {
       thumbnail: "/assets/images/tradeintelligence.png",
-      projectTitle: "Trade intelligence",
-      caption: ["x", "x", "x"],
-      client: "Co-creation hub (CCHUB)",
+      projectTitle: "Trade Intelligence",
+      caption: [
+        "Developed a responsive landing page ensuring seamless user experience across all devices.",
+        "Implemented a real-time chat section for logged-in users to enhance user engagement.",
+        "Implemented a report generator that accepts user prompts and generates downloadable PDF reports.",
+      ],
+      client: "Co-creation Hub (CcHUB)",
       period: "August - November 2024",
       role: "Frontend Developer",
       liveSiteLink: "https://trade-intelligence.ncair.nitda.gov.ng/",
-      // playStoreLink:
-      //   "https://play.google.com/store/apps/details?id=com.turfind.turfind",
-      // appStoreLink: "https://apps.apple.com/us/app/turfind/id1234567890",
     },
-
     {
       thumbnail: "/assets/images/3mtt.png",
-      projectTitle: "3mtt Learning Platform",
-      caption: ["x", "x", "x"],
+      projectTitle: "3MTT Learning Platform",
+      caption: [
+        "Implemented an AI-driven chat interface to provide tailored answers based on the user's registered course.",
+        "Ensured a seamless and responsive user experience across various devices.",
+      ],
       client: "Publica AI",
-      period: "November - Present",
+      period: "November 2024 - Present",
       role: "Frontend Developer",
       liveSiteLink: "https://3mtt.ncair.nitda.gov.ng/",
     },
-
     {
       thumbnail: "/assets/images/publicaai.png",
-      projectTitle: "Publica AI website",
-      caption: ["x"],
+      projectTitle: "Publica AI Website",
+      caption: [
+        "Developed the fully responsive website ensuring optimal performance across all devices.",
+        "Implemented advanced CSS techniques and modern JavaScript frameworks to enhance user experience.",
+        "Optimized website speed and performance through efficient coding practices and asset optimization.",
+        "Utilized best practices in accessibility and SEO to improve reach and usability.",
+        "Collaborated with designers to ensure seamless user experience.",
+      ],
       client: "Publica AI",
       period: "December 2023 - Present",
       role: "Frontend Developer",
@@ -249,7 +257,13 @@ const Projects: React.FC = () => {
     {
       thumbnail: "/assets/images/airflow.png",
       projectTitle: "Airflow",
-      caption: ["It is a smart flight booking platform with AI."],
+      caption: [
+        "Collaborated with a team to develop a smart flight booking platform with AI integration.",
+        "Implemented role-based authentication and authorization (RBAC) to manage user access.",
+        "Managed complex global state using advanced state management techniques.",
+        "Ensured seamless user experience with responsive design and optimized performance.",
+        "Worked closely with backend developers to integrate AI-driven features and ensure data consistency.",
+      ],
       client: "Publica AI, Airflow",
       period: "February - March 2025",
       role: "Frontend Developer",
