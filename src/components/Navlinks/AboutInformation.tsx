@@ -230,7 +230,7 @@ const AboutInformation: React.FC = () => {
             {frameworks.map((framework, index) => (
               <Paper
                 key={index}
-                elevation={3}
+                variant="outlined"
                 sx={{
                   display: "flex",
                   alignItems: "center",
