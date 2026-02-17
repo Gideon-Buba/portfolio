@@ -7,7 +7,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import { createBouncyText } from "./utils/bouncyText";
 import ArrowIcon from "/assets/images/arrow.png";
-import Avatar from "./Avatar"; // Import the Avatar component
+import Avatar from "./Avatar";
 
 AOS.init();
 
@@ -19,6 +19,7 @@ const HeroContainer = styled(Box)(() => ({
   gridTemplateRows: "1fr",
   gridColumnGap: "0px",
   gridRowGap: "0px",
+  overflow: "hidden",
 
   "@media (max-width: 700px)": {
     gridTemplateColumns: "1fr",
@@ -33,6 +34,8 @@ const HeroTextContainer = styled(Box)(() => ({
   justifyContent: "flex-start",
   alignItems: "flex-start",
   marginTop: "90px",
+  maxWidth: "100%",
+  overflowX: "hidden",
 }));
 
 const Container = styled(Box)(() => ({
@@ -129,8 +132,9 @@ const Hero: React.FC = () => {
               sx={{
                 fontFamily: "Bebas Neue",
                 color: "#FFFFFF",
-                fontSize: "90px",
+                fontSize: { xs: "clamp(40px, 12vw, 90px)", md: "90px" },
                 lineHeight: 1,
+                whiteSpace: "nowrap",
               }}
             >
               {createBouncyText("GIDEON BUBA")}
@@ -143,7 +147,8 @@ const Hero: React.FC = () => {
                 fontWeight: 400,
                 color: "#C7C7C7",
                 fontSize: "18px",
-                textWrap: "word-break",
+                maxWidth: "100%",
+                wordWrap: "break-word",
               }}
             >
               I am a full-stack developer with experience in creating
@@ -198,6 +203,8 @@ const Hero: React.FC = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              maxWidth: "100%",
+              overflow: "hidden",
             }}
           >
             <Avatar /> {/* Use the Avatar component here */}

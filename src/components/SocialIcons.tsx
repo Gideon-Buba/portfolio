@@ -6,7 +6,6 @@ const SocialIcon = styled("img")(({ theme }) => ({
   display: "block",
   width: "auto",
   height: "auto",
-  backgroundColor: "#222222",
   cursor: "pointer",
   [theme.breakpoints.down("sm")]: {
     padding: "10px", // Reduce padding on smaller screens
@@ -31,6 +30,7 @@ const SocialIcons: React.FC = () => {
           justifyContent: "center",
           alignItems: "center",
           borderRadius: "50%",
+          overflow: "hidden",
         }}
       >
         <a
@@ -51,6 +51,7 @@ const SocialIcons: React.FC = () => {
           justifyContent: "center",
           alignItems: "center",
           borderRadius: "50%",
+          overflow: "hidden",
         }}
       >
         <a
