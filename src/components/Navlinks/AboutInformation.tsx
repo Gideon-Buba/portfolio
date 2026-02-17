@@ -20,13 +20,24 @@ const experiences = [
     title: "Frontend Developer (Remote)",
     company: "Co-creation hub Africa (CCHUB)",
     date: "August - November 2024",
-    responsibilities: ["X"],
+    responsibilities: [
+      "Worked on the Trade Intelligence project using React.",
+      "Built responsive UI components from design.",
+      "Gained practical experience with React and modern frontend development.",
+    ],
   },
   {
     title: "Frontend Developer (On-site)",
     company: "Publica AI",
     date: "November 2024 - November 2025",
-    responsibilities: ["X"],
+    responsibilities: [
+      "Integrated REST and GraphQL APIs into frontend applications.",
+      "Handled complex state and data flow across components.",
+      "Improved UI logic for dynamic and interactive features.",
+      "Learned to write cleaner, reusable code and follow software architecture best practices from planning to execution.",
+      "Worked closely with other developers to ship features efficiently.",
+      "Built REST APIs using relational and non-relational databases.",
+    ],
   },
 ];
 
