@@ -25,7 +25,7 @@ const experiences = [
   {
     title: "Frontend Developer (On-site)",
     company: "Publica AI",
-    date: "November 2024 - Present",
+    date: "November 2024 - November 2025",
     responsibilities: ["X"],
   },
 ];

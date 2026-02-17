@@ -241,7 +241,7 @@ const Projects: React.FC = () => {
         "Ensured a seamless and responsive user experience across various devices.",
       ],
       client: "Publica AI",
-      period: "November 2024 - Present",
+      period: "November 2024 - November 2025",
       role: "Frontend Developer",
       liveSiteLink: "https://3mtt.ncair.nitda.gov.ng/",
     },
@@ -256,7 +256,7 @@ const Projects: React.FC = () => {
         "Collaborated with designers to ensure seamless user experience.",
       ],
       client: "Publica AI",
-      period: "December 2023 - Present",
+      period: "December 2023 -November 2025",
       role: "Frontend Developer",
       liveSiteLink: "https://www.publicaai.com/",
     },
@@ -276,16 +276,6 @@ const Projects: React.FC = () => {
       role: "Frontend Developer",
       liveSiteLink: "https://airflow.publicaai.com/",
     },
-
-    // {
-    //   thumbnail: "/assets/images/slayt.png",
-    //   projectTitle: "Slayt",
-    //   caption: ["Lorem Ipsum"],
-    //   client: "Slayt",
-    //   period: "December 2023 - Present",
-    //   role: "Mobile Developer",
-    //   liveSiteLink: "https://www.foodnify.com/",
-    // },
   ];
 
   return (
