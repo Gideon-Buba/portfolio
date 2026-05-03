@@ -2,10 +2,12 @@ import { useState } from "react"
 import emailjs from "@emailjs/browser"
 import { Mail, Phone, FileText, Loader2, ArrowRight, CheckCircle } from "lucide-react"
 import { SiLinkedin, SiGithub } from "react-icons/si"
+import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Separator } from "@/components/ui/separator"
+import { fadeUp, stagger } from "@/lib/animations"
 
 /* ── Types ────────────────────────────────────────────────────── */
 interface FormValues {
@@ -133,8 +135,14 @@ export default function Contact() {
       <div className="grid gap-16 md:grid-cols-[1fr_1.2fr] md:gap-24">
 
         {/* ── Left: contact info ──────────────────────────── */}
-        <div className="flex flex-col gap-8">
-          <div className="flex flex-col gap-4">
+        <motion.div
+          className="flex flex-col gap-8"
+          variants={stagger(0.12)}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: "-60px" }}
+        >
+          <motion.div variants={fadeUp} className="flex flex-col gap-4">
             <h2 className="font-heading text-7xl leading-none text-foreground md:text-8xl">
               LET'S
               <br />
@@ -144,19 +152,21 @@ export default function Contact() {
               Have a project in mind or want to work together? Send a message
               and I'll get back to you as soon as possible.
             </p>
-          </div>
+          </motion.div>
 
-          <Separator />
+          <motion.div variants={fadeUp}><Separator /></motion.div>
 
           {/* Contact details */}
-          <div className="flex flex-col gap-5">
+          <motion.div variants={fadeUp} className="flex flex-col gap-5">
             {CONTACT_DETAILS.map(({ icon: Icon, label, value, href }) => (
-              <a
+              <motion.a
                 key={label}
                 href={href}
                 target={href.startsWith("http") ? "_blank" : undefined}
                 rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="group flex items-center gap-4 transition-colors hover:text-primary"
+                whileHover={{ x: 4 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <div className="flex size-10 shrink-0 items-center justify-center rounded-full
                                 border border-border transition-all duration-200
@@ -167,16 +177,16 @@ export default function Contact() {
                   <span className="text-xs text-muted-foreground">{label}</span>
                   <span className="text-sm font-medium">{value}</span>
                 </div>
-              </a>
+              </motion.a>
             ))}
-          </div>
+          </motion.div>
 
-          <Separator />
+          <motion.div variants={fadeUp}><Separator /></motion.div>
 
           {/* Social links */}
-          <div className="flex items-center gap-3">
+          <motion.div variants={fadeUp} className="flex items-center gap-3">
             {SOCIAL_LINKS.map(({ href, icon: Icon, label }) => (
-              <a
+              <motion.a
                 key={href}
                 href={href}
                 target="_blank"
@@ -185,15 +195,23 @@ export default function Contact() {
                 className="size-10 flex items-center justify-center rounded-full border border-border
                            text-muted-foreground transition-all duration-200
                            hover:border-primary hover:text-primary"
+                whileHover={{ scale: 1.15, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
               >
                 <Icon size={17} />
-              </a>
+              </motion.a>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* ── Right: form ─────────────────────────────────── */}
-        <div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.1, 0.25, 1] }}
+        >
           {status === "success" ? (
             <div className="flex h-full flex-col items-center justify-center gap-4 py-16 text-center">
               <CheckCircle size={48} className="text-primary" />
@@ -264,10 +282,16 @@ export default function Contact() {
                 </p>
               )}
 
+              <motion.div
+                className="self-start"
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+              >
               <Button
                 type="submit"
                 disabled={status === "loading"}
-                className="group/btn self-start rounded-full h-12 px-8 font-semibold text-sm gap-2"
+                className="group/btn rounded-full h-12 px-8 font-semibold text-sm gap-2"
               >
                 {status === "loading" ? (
                   <>
@@ -284,9 +308,10 @@ export default function Contact() {
                   </>
                 )}
               </Button>
+              </motion.div>
             </form>
           )}
-        </div>
+        </motion.div>
 
       </div>
     </div>

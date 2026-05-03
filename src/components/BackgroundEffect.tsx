@@ -50,6 +50,10 @@ export function BackgroundEffect() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
+    // Non-nullable aliases for use inside closures
+    const cvs: HTMLCanvasElement = canvas
+    const c: CanvasRenderingContext2D = ctx
+
     let animId: number
     let w = window.innerWidth
     let h = window.innerHeight
@@ -82,8 +86,8 @@ export function BackgroundEffect() {
     function onResize() {
       w = window.innerWidth
       h = window.innerHeight
-      canvas.width = w
-      canvas.height = h
+      cvs.width = w
+      cvs.height = h
       buildStars()
     }
     window.addEventListener("resize", onResize)
@@ -91,7 +95,7 @@ export function BackgroundEffect() {
     /* ── Draw loop ───────────────────────────────────── */
     function tick() {
       const isDark = document.documentElement.classList.contains("dark")
-      ctx.clearRect(0, 0, w, h)
+      c.clearRect(0, 0, w, h)
 
       // Star colour — white in dark, dark indigo in light
       const [sr, sg, sb, starAlphaScale] = isDark
@@ -103,10 +107,10 @@ export function BackgroundEffect() {
         s.phase += s.speed
         const twinkle = Math.sin(s.phase) * 0.35 + 0.65
         const alpha = s.baseOpacity * twinkle * starAlphaScale
-        ctx.beginPath()
-        ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(${sr},${sg},${sb},${alpha})`
-        ctx.fill()
+        c.beginPath()
+        c.arc(s.x, s.y, s.radius, 0, Math.PI * 2)
+        c.fillStyle = `rgba(${sr},${sg},${sb},${alpha})`
+        c.fill()
       }
 
       // Spawn meteors
@@ -127,10 +131,6 @@ export function BackgroundEffect() {
           continue
         }
 
-        const tailX = m.x - m.vx / m.width * m.length * 0.12 * m.width
-        const tailY = m.y - m.vy / m.width * m.length * 0.12 * m.width
-
-        // Actual tail using angle
         const angle = Math.atan2(m.vy, m.vx)
         const tx = m.x - Math.cos(angle) * m.length
         const ty = m.y - Math.sin(angle) * m.length
@@ -139,27 +139,27 @@ export function BackgroundEffect() {
         const headRgb = isDark ? "255,255,255" : "80,100,20"
         const tailRgb = "211,233,122"
 
-        const grad = ctx.createLinearGradient(tx, ty, m.x, m.y)
+        const grad = c.createLinearGradient(tx, ty, m.x, m.y)
         grad.addColorStop(0, `rgba(${tailRgb},0)`)
         grad.addColorStop(0.5, `rgba(${tailRgb},${m.opacity * 0.4})`)
         grad.addColorStop(1, `rgba(${headRgb},${m.opacity})`)
 
-        ctx.beginPath()
-        ctx.moveTo(tx, ty)
-        ctx.lineTo(m.x, m.y)
-        ctx.strokeStyle = grad
-        ctx.lineWidth = m.width
-        ctx.lineCap = "round"
-        ctx.stroke()
+        c.beginPath()
+        c.moveTo(tx, ty)
+        c.lineTo(m.x, m.y)
+        c.strokeStyle = grad
+        c.lineWidth = m.width
+        c.lineCap = "round"
+        c.stroke()
 
         // Head glow
-        const glow = ctx.createRadialGradient(m.x, m.y, 0, m.x, m.y, 5)
+        const glow = c.createRadialGradient(m.x, m.y, 0, m.x, m.y, 5)
         glow.addColorStop(0, `rgba(${headRgb},${m.opacity})`)
         glow.addColorStop(1, `rgba(${headRgb},0)`)
-        ctx.beginPath()
-        ctx.arc(m.x, m.y, 5, 0, Math.PI * 2)
-        ctx.fillStyle = glow
-        ctx.fill()
+        c.beginPath()
+        c.arc(m.x, m.y, 5, 0, Math.PI * 2)
+        c.fillStyle = glow
+        c.fill()
       }
 
       animId = requestAnimationFrame(tick)

@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { NavLink } from "react-router-dom"
 import { Sun, Moon, Menu } from "lucide-react"
 import { SiLinkedin, SiGithub } from "react-icons/si"
+import { motion, useScroll, useSpring } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -45,6 +46,8 @@ export default function NavBar() {
   const { theme, toggleTheme } = useTheme()
   const [scrolled, setScrolled] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+  const { scrollYProgress } = useScroll()
+  const scaleX = useSpring(scrollYProgress, { stiffness: 200, damping: 30, restDelta: 0.001 })
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -61,6 +64,12 @@ export default function NavBar() {
           : "bg-transparent"
       )}
     >
+      {/* Scroll progress bar */}
+      <motion.span
+        className="absolute bottom-0 left-0 h-px w-full bg-primary origin-left"
+        style={{ scaleX }}
+      />
+
       <div className="max-w-[90%] mx-auto flex items-center justify-between h-20">
 
         {/* ── Logo ──────────────────────────────────────────── */}
