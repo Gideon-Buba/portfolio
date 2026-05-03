@@ -19,7 +19,7 @@ export default function App() {
       <div className="w-[90%] mx-auto">
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<About isAboutPage={true} />} />
+          <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
