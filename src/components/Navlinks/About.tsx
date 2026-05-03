@@ -165,10 +165,10 @@ export default function About() {
         </div>
       </SectionRow>
 
-      <Separator />
+      <Separator className="mt-8" />
 
       {/* ── Experience ────────────────────────────────────── */}
-      <SectionRow title="EXPERIENCE">
+      <SectionRow title="EXPERIENCE" className="pt-20">
         <div className="flex flex-col gap-10">
           {experiences.map((exp) => (
             <div key={exp.company} className="relative border-l border-border pl-6">
