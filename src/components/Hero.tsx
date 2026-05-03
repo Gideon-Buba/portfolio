@@ -1,237 +1,121 @@
-import React, { useEffect, useRef, useState } from "react";
-import { styled } from "@mui/system";
-import { Box, Button, Typography } from "@mui/material";
-import SocialIcons from "./SocialIcons";
-import { About, Contact, Projects } from "./Navlinks";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { createBouncyText } from "./utils/bouncyText";
-import ArrowIcon from "/assets/images/arrow.png";
-import Avatar from "./Avatar";
+import { SiLinkedin, SiGithub } from "react-icons/si"
+import { Button } from "@/components/ui/button"
+import { createBouncyText } from "./utils/bouncyText"
+import Avatar3D from "./Avatar"
+import { About, Contact, Projects } from "./Navlinks"
 
-AOS.init();
-
-const HeroContainer = styled(Box)(() => ({
-  width: "100%",
-  height: "100%",
-  display: "grid",
-  gridTemplateColumns: "1.5fr 1fr",
-  gridTemplateRows: "1fr",
-  gridColumnGap: "0px",
-  gridRowGap: "0px",
-  overflow: "hidden",
-
-  "@media (max-width: 700px)": {
-    gridTemplateColumns: "1fr",
-    gridTemplateRows: "auto auto",
-  },
-}));
-
-const HeroTextContainer = styled(Box)(() => ({
-  display: "flex",
-  flexDirection: "column",
-  gap: "20px",
-  justifyContent: "flex-start",
-  alignItems: "flex-start",
-  marginTop: "90px",
-  maxWidth: "100%",
-  overflowX: "hidden",
-}));
-
-const Container = styled(Box)(() => ({
-  overflowY: "scroll",
-  height: "100%",
-  scrollBehavior: "smooth", // Ensure smooth scrolling
-  // Hide scrollbar for WebKit browsers
-  "&::-webkit-scrollbar": {
-    display: "none",
-  },
-  // Hide scrollbar for Firefox
-  scrollbarWidth: "none",
-  // Hide scrollbar for IE and Edge
-  msOverflowStyle: "none",
-}));
-
-const Section = styled(Box)(() => ({
-  minHeight: "100vh",
-}));
-
-interface BlackHoleIconProps {
-  isHovered: boolean;
-}
-
-const BlackHoleIcon: React.FC<BlackHoleIconProps> = ({ isHovered }) => (
-  <svg
-    width="15"
-    height="15"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="black-hole-icon"
-  >
-    <circle cx="12" cy="12" r="8" fill="black" />
-    {isHovered && (
-      <foreignObject x="8" y="8" width="8" height="8">
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "100%",
-            height: "100%",
-          }}
-        >
-          <img
-            src={ArrowIcon}
-            alt="arrow"
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
-        </Box>
-      </foreignObject>
-    )}
-  </svg>
-);
-
-const Hero: React.FC = () => {
-  const contactRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-
-  useEffect(() => {
-    AOS.init({
-      // Global settings for AOS
-      duration: 1200,
-    });
-  }, []);
-
-  const handleContactMeClick = () => {
-    if (contactRef.current) {
-      contactRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+export default function Hero() {
   return (
-    <Container>
-      {/* Hero section */}
-      <Section>
-        <HeroContainer data-aos="fade-up">
-          <HeroTextContainer>
-            {/* "hi, i am" text, hidden on mobile */}
-            <Typography
-              sx={{
-                fontFamily: "Bebas Neue",
-                color: "#FFFFFF",
-                fontSize: "90px",
-                lineHeight: 1,
-                display: { xs: "none", md: "block" }, // Hide on mobile (xs)
-              }}
-            >
-              {createBouncyText("hi, i am")} <br />
-            </Typography>
+    <>
+      {/* ── Hero ─────────────────────────────────────────────── */}
+      <section
+        id="home"
+        className="min-h-[100dvh] pt-20 flex items-center"
+      >
+        <div className="w-full grid md:grid-cols-[1.4fr_1fr] gap-12 items-center py-16">
 
-            <Typography
-              sx={{
-                fontFamily: "Bebas Neue",
-                color: "#FFFFFF",
-                fontSize: { xs: "clamp(40px, 12vw, 90px)", md: "90px" },
-                lineHeight: 1,
-                whiteSpace: "nowrap",
-              }}
-            >
-              {createBouncyText("GIDEON BUBA")}
-            </Typography>
+          {/* Left column */}
+          <div className="flex flex-col gap-6">
 
-            <Typography
-              sx={{
-                fontFamily: "manrope",
-                lineHeight: "27px",
-                fontWeight: 400,
-                color: "#C7C7C7",
-                fontSize: "18px",
-                maxWidth: "100%",
-                wordWrap: "break-word",
-              }}
-            >
-              I am a full-stack developer with experience in creating
-              high-quality web applications. Passionate about learning new
-              technologies and solving problems. Skilled in teamwork and
-              delivering user-friendly, scalable solutions in agile
-              environments.
-            </Typography>
+            {/* Availability badge */}
+            <div className="flex items-center gap-2.5 w-fit">
+              <span className="size-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm text-muted-foreground">
+                Available for new opportunities
+              </span>
+            </div>
 
-            <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
+            {/* Name */}
+            <div>
+              <p className="font-heading leading-none text-muted-foreground/40 select-none
+                            text-[2.8rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem]">
+                {createBouncyText("hi, i am")}
+              </p>
+              <h1 className="font-heading leading-[0.92] text-foreground
+                             text-[5rem] sm:text-[6.5rem] md:text-[8.5rem] lg:text-[10.5rem]">
+                {createBouncyText("GIDEON")}
+                <br />
+                {createBouncyText("BUBA")}
+              </h1>
+            </div>
+
+            {/* Bio */}
+            <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-[500px]">
+              Full-stack developer based in Abuja. I build high-quality web
+              applications with React, TypeScript, and Node.js — focused on
+              clean code, great UX, and shipping work that makes an impact.
+            </p>
+
+            {/* CTAs */}
+            <div className="flex flex-wrap items-center gap-3">
               <Button
-                variant="contained"
-                endIcon={<BlackHoleIcon isHovered={isHovered} />}
-                disableElevation
-                sx={{
-                  width: "187px",
-                  height: "54px",
-                  backgroundColor: "#D3E97A",
-                  fontFamily: "Manrope",
-                  fontSize: "16px",
-                  fontWeight: 700,
-                  lineHeight: "27px",
-                  color: "#0A0A0A",
-                  borderRadius: "100px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  "&:hover .black-hole-icon": {
-                    transform: "scale(4)",
-                    transition: "transform 0.3s ease",
-                  },
-                }}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                onClick={handleContactMeClick}
+                size="lg"
+                className="rounded-full px-8 h-12 font-semibold text-sm"
+                render={<a href="#contact" />}
               >
-                CONTACT ME
+                Contact Me
               </Button>
-              <Box
-                sx={{
-                  display: { xs: "flex", md: "none" },
-                  alignItems: "center",
-                  gap: "10px",
-                }}
+              <Button
+                variant="outline"
+                size="lg"
+                className="rounded-full px-8 h-12 font-semibold text-sm"
+                render={<a href="#projects" />}
               >
-                <SocialIcons />
-              </Box>
-            </Box>
-          </HeroTextContainer>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              maxWidth: "100%",
-              overflow: "hidden",
-            }}
-          >
-            <Avatar /> {/* Use the Avatar component here */}
-          </Box>
-        </HeroContainer>
-      </Section>
+                View Work
+              </Button>
 
-      {/* Projects section */}
-      <Section data-aos="fade-up">
+              {/* Mobile social icons */}
+              <div className="flex md:hidden items-center gap-4 ml-1">
+                <a
+                  href="https://www.linkedin.com/in/gideon-buba-34aaa2190/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                >
+                  <SiLinkedin size={20} />
+                </a>
+                <a
+                  href="https://github.com/Gideon-Buba"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                >
+                  <SiGithub size={20} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Right column — 3D Avatar */}
+          <div className="hidden md:flex items-center justify-center">
+            <div className="w-full max-w-[400px] aspect-square">
+              <Avatar3D />
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ── Projects ─────────────────────────────────────────── */}
+      <section id="projects" className="py-24" data-aos="fade-up">
         <Projects />
-      </Section>
+      </section>
 
-      {/* About section */}
-      <Section data-aos="fade-up">
+      {/* ── About ────────────────────────────────────────────── */}
+      <section id="about" className="py-24" data-aos="fade-up">
         <About />
-      </Section>
+      </section>
 
-      {/* Contact section */}
-      <Section
+      {/* ── Contact ──────────────────────────────────────────── */}
+      <section
+        id="contact"
+        className="py-24 flex items-center justify-center"
         data-aos="fade-up"
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-        ref={contactRef}
       >
         <Contact />
-      </Section>
-    </Container>
-  );
-};
-
-export default Hero;
+      </section>
+    </>
+  )
+}

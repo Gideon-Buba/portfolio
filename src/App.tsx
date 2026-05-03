@@ -1,44 +1,29 @@
-import React, { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Box } from "@mui/material";
-import { About, Projects, Contact } from "./components/Navlinks";
-import Hero from "./components/Hero";
-import AOS from "aos";
-import "aos/dist/aos.css"; // Import AOS styles
-import NavBar from "./components/NavBar";
-import AnimatedCursorConfig from "./components/AnimatedCursorConfig";
+import { useEffect } from "react"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import { About, Projects, Contact } from "./components/Navlinks"
+import Hero from "./components/Hero"
+import NavBar from "./components/NavBar"
+import AnimatedCursorConfig from "./components/AnimatedCursorConfig"
+import AOS from "aos"
+import "aos/dist/aos.css"
 
-const App: React.FC = () => {
+export default function App() {
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
-  }, []);
+    AOS.init({ duration: 1000, once: true })
+  }, [])
 
   return (
     <Router>
-      <Box
-        className="main-background"
-        sx={{
-          width: "90%",
-          margin: "0 auto",
-          padding: "0 16px",
-        }}
-      >
-        <NavBar />
-        <AnimatedCursorConfig /> {/* Add the custom cursor component */}
-        {/* <Projects /> */}
+      <NavBar />
+      <AnimatedCursorConfig />
+      <div className="w-[90%] mx-auto">
         <Routes>
-          {/* Route for Home page */}
           <Route path="/" element={<Hero />} />
           <Route path="/about" element={<About isAboutPage={true} />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
-      </Box>
+      </div>
     </Router>
-  );
-};
-
-export default App;
+  )
+}
