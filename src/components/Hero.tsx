@@ -10,12 +10,12 @@ export default function Hero() {
       {/* ── Hero ─────────────────────────────────────────────── */}
       <section
         id="home"
-        className="min-h-[100dvh] pt-20 flex items-center"
+        className="h-[100dvh] pt-20 flex items-center overflow-hidden"
       >
-        <div className="w-full grid md:grid-cols-[1.4fr_1fr] gap-12 items-center py-16">
+        <div className="w-full grid md:grid-cols-[1.4fr_1fr] gap-8 md:gap-12 items-center">
 
           {/* Left column */}
-          <div className="flex flex-col gap-6">
+          <div className="flex flex-col gap-4">
 
             {/* Availability badge */}
             <div className="flex items-center gap-2.5 w-fit">
@@ -25,14 +25,14 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Name */}
+            {/* Name — sizes are vh-relative so they physically can't overflow */}
             <div>
               <p className="font-heading leading-none text-muted-foreground/40 select-none
-                            text-[2.8rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.5rem]">
+                            text-[clamp(1.5rem,3.5vh,3.5rem)]">
                 {createBouncyText("hi, i am")}
               </p>
               <h1 className="font-heading leading-[0.92] text-foreground
-                             text-[5rem] sm:text-[6.5rem] md:text-[8.5rem] lg:text-[10.5rem]">
+                             text-[clamp(3rem,8.5vh,7.5rem)]">
                 {createBouncyText("GIDEON")}
                 <br />
                 {createBouncyText("BUBA")}
@@ -40,17 +40,17 @@ export default function Hero() {
             </div>
 
             {/* Bio */}
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed max-w-[500px]">
+            <p className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-[480px]">
               Full-stack developer based in Abuja. I build high-quality web
               applications with React, TypeScript, and Node.js — focused on
-              clean code, great UX, and shipping work that makes an impact.
+              clean code, great UX, and shipping things that make an impact.
             </p>
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-3">
               <Button
                 size="lg"
-                className="rounded-full px-8 h-12 font-semibold text-sm"
+                className="rounded-full px-7 h-11 font-semibold text-sm"
                 render={<a href="#contact" />}
               >
                 Contact Me
@@ -58,7 +58,7 @@ export default function Hero() {
               <Button
                 variant="outline"
                 size="lg"
-                className="rounded-full px-8 h-12 font-semibold text-sm"
+                className="rounded-full px-7 h-11 font-semibold text-sm"
                 render={<a href="#projects" />}
               >
                 View Work
