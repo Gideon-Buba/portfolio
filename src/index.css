@@ -98,6 +98,31 @@
   --ring: oklch(0.91 0.17 116);
 }
 
+/* ─── Aurora background keyframes ───────────────────────────────── */
+
+/* Full 360° rotation so the blobs genuinely twirl — not just drift */
+@keyframes aurora-1 {
+  0%   { transform: translate(0, 0)       rotate(0deg)   scale(1);    }
+  25%  { transform: translate(7%, -10%)   rotate(90deg)  scale(1.08); }
+  50%  { transform: translate(-8%, 6%)    rotate(180deg) scale(0.94); }
+  75%  { transform: translate(5%, 12%)    rotate(270deg) scale(1.05); }
+  100% { transform: translate(0, 0)       rotate(360deg) scale(1);    }
+}
+
+@keyframes aurora-2 {
+  0%   { transform: translate(0, 0)       rotate(0deg)    scale(1);    }
+  33%  { transform: translate(-10%, 9%)   rotate(-120deg) scale(1.12); }
+  66%  { transform: translate(9%, -12%)   rotate(-240deg) scale(0.91); }
+  100% { transform: translate(0, 0)       rotate(-360deg) scale(1);    }
+}
+
+@keyframes aurora-3 {
+  0%   { transform: translate(0, 0)       rotate(0deg)   scale(1);    }
+  30%  { transform: translate(12%, 5%)    rotate(108deg) scale(1.07); }
+  65%  { transform: translate(-6%, -9%)   rotate(234deg) scale(0.93); }
+  100% { transform: translate(0, 0)       rotate(360deg) scale(1);    }
+}
+
 /* ─── Base layer ────────────────────────────────────────────────── */
 @layer base {
   *,
@@ -117,12 +142,4 @@
     min-height: 100dvh;
   }
 
-  /* Subtle accent glow at the top — dark mode only */
-  .dark body {
-    background-image: radial-gradient(
-      ellipse 90% 50% at 50% -10%,
-      oklch(0.91 0.17 116 / 0.06),
-      transparent
-    );
-  }
 }
