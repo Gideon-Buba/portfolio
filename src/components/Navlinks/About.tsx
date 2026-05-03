@@ -33,14 +33,14 @@ function SectionRow({
   return (
     <div
       className={cn(
-        "grid gap-8 py-16 md:grid-cols-[220px_1fr] md:gap-16 lg:grid-cols-[280px_1fr]",
+        "grid items-start gap-8 py-16 md:grid-cols-[220px_1fr] md:gap-16 lg:grid-cols-[280px_1fr]",
         className
       )}
     >
       <h2 className="font-heading text-7xl leading-none text-foreground md:text-8xl">
         {title}
       </h2>
-      <div className="flex flex-col justify-center">{children}</div>
+      <div>{children}</div>
     </div>
   )
 }
@@ -169,7 +169,7 @@ export default function About() {
 
       {/* ── Experience ────────────────────────────────────── */}
       <SectionRow title="EXPERIENCE" className="pt-20">
-        <div className="flex flex-col gap-10 mt-8">
+        <div className="flex flex-col gap-10 mt-8 md:ml-10">
           {experiences.map((exp) => (
             <div key={exp.company} className="relative pl-6">
               {/* Timeline line — starts at dot, not above it */}
