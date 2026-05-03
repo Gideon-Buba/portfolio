@@ -169,11 +169,13 @@ export default function About() {
 
       {/* ── Experience ────────────────────────────────────── */}
       <SectionRow title="EXPERIENCE" className="pt-20">
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-10 mt-8">
           {experiences.map((exp) => (
-            <div key={exp.company} className="relative border-l border-border pl-6">
+            <div key={exp.company} className="relative pl-6">
+              {/* Timeline line — starts at dot, not above it */}
+              <span className="absolute left-0 top-1.5 bottom-0 w-px bg-border" />
               {/* Timeline dot */}
-              <span className="absolute -left-[5px] top-1.5 size-2.5 rounded-full bg-primary" />
+              <span className="absolute -left-[4.5px] top-1.5 size-2.5 rounded-full bg-primary" />
 
               {/* Header row */}
               <div className="flex flex-col gap-0.5 sm:flex-row sm:items-center sm:justify-between">
