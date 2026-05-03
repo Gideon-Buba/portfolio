@@ -76,8 +76,7 @@ export function BackgroundEffect() {
     /* ── Meteors ─────────────────────────────────────── */
     const meteors: Meteor[] = []
     let frame = 0
-    // Stagger initial spawn
-    const SPAWN_INTERVAL = 55
+    const SPAWN_INTERVAL = 150
 
     /* ── Resize ──────────────────────────────────────── */
     function onResize() {
@@ -94,16 +93,16 @@ export function BackgroundEffect() {
       const isDark = document.documentElement.classList.contains("dark")
       ctx.clearRect(0, 0, w, h)
 
-      // Star colour
-      const sr = isDark ? 255 : 30
-      const sg = isDark ? 255 : 30
-      const sb = isDark ? 255 : 80
+      // Star colour — white in dark, dark indigo in light
+      const [sr, sg, sb, starAlphaScale] = isDark
+        ? [255, 255, 255, 1]
+        : [50, 50, 120, 0.55]
 
       // Draw stars
       for (const s of stars) {
         s.phase += s.speed
         const twinkle = Math.sin(s.phase) * 0.35 + 0.65
-        const alpha = s.baseOpacity * twinkle * (isDark ? 1 : 0.25)
+        const alpha = s.baseOpacity * twinkle * starAlphaScale
         ctx.beginPath()
         ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2)
         ctx.fillStyle = `rgba(${sr},${sg},${sb},${alpha})`
@@ -136,12 +135,14 @@ export function BackgroundEffect() {
         const tx = m.x - Math.cos(angle) * m.length
         const ty = m.y - Math.sin(angle) * m.length
 
+        // Tail + head colours adapt to theme
+        const headRgb = isDark ? "255,255,255" : "80,100,20"
+        const tailRgb = "211,233,122"
+
         const grad = ctx.createLinearGradient(tx, ty, m.x, m.y)
-        // Tail: brand yellow-green fading in
-        grad.addColorStop(0, `rgba(211,233,122,0)`)
-        grad.addColorStop(0.5, `rgba(211,233,122,${m.opacity * 0.35})`)
-        // Head: white flash
-        grad.addColorStop(1, `rgba(255,255,255,${m.opacity})`)
+        grad.addColorStop(0, `rgba(${tailRgb},0)`)
+        grad.addColorStop(0.5, `rgba(${tailRgb},${m.opacity * 0.4})`)
+        grad.addColorStop(1, `rgba(${headRgb},${m.opacity})`)
 
         ctx.beginPath()
         ctx.moveTo(tx, ty)
@@ -151,12 +152,12 @@ export function BackgroundEffect() {
         ctx.lineCap = "round"
         ctx.stroke()
 
-        // Bright head glow
-        const glow = ctx.createRadialGradient(m.x, m.y, 0, m.x, m.y, 4)
-        glow.addColorStop(0, `rgba(255,255,255,${m.opacity})`)
-        glow.addColorStop(1, `rgba(255,255,255,0)`)
+        // Head glow
+        const glow = ctx.createRadialGradient(m.x, m.y, 0, m.x, m.y, 5)
+        glow.addColorStop(0, `rgba(${headRgb},${m.opacity})`)
+        glow.addColorStop(1, `rgba(${headRgb},0)`)
         ctx.beginPath()
-        ctx.arc(m.x, m.y, 4, 0, Math.PI * 2)
+        ctx.arc(m.x, m.y, 5, 0, Math.PI * 2)
         ctx.fillStyle = glow
         ctx.fill()
       }
