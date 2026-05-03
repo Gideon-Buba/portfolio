@@ -15,9 +15,9 @@ export default function App() {
       <div className="w-[90%] mx-auto">
         <Routes>
           <Route path="/" element={<Hero />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<div className="pt-28 pb-24"><About /></div>} />
+          <Route path="/projects" element={<div className="pt-28 pb-24"><Projects /></div>} />
+          <Route path="/contact" element={<div className="pt-28 pb-24 flex items-center justify-center"><Contact /></div>} />
         </Routes>
       </div>
       <Footer />
