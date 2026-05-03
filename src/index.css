@@ -1,27 +1,128 @@
-* {
-  margin: 0;
-  padding: 0;
-  /* background-image: radial-gradient(#141414 2px, transparent 2px);
-  background-size: 47px 47px;
-  background-color: #0a0a0a; */
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
 
-  .bebas-neue-regular {
-    font-family: "Bebas Neue", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+@custom-variant dark (&:is(.dark *));
 
-  .manrope-regular {
-    font-family: "Manrope", sans-serif;
-    font-optical-sizing: auto;
-    font-style: normal;
-  }
+/* ─── Font registration ─────────────────────────────────────────── */
+@theme inline {
+  --font-sans: "Geist Variable", sans-serif;
+  --font-heading: "Bebas Neue", sans-serif;
 
-  /* Apply background only to the main container */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
 }
 
-body {
-  background-image: radial-gradient(#141414 2px, transparent 2px);
-  background-size: 47px 47px;
-  background-color: #0a0a0a;
+/* ─── Light theme ───────────────────────────────────────────────── */
+:root {
+  --radius: 0.75rem;
+
+  --background: oklch(0.98 0 0);
+  --foreground: oklch(0.09 0 0);
+
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.09 0 0);
+
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.09 0 0);
+
+  /* #D3E97A — works as bg in light mode; dark text sits on it */
+  --primary: oklch(0.91 0.17 116);
+  --primary-foreground: oklch(0.09 0 0);
+
+  --secondary: oklch(0.95 0 0);
+  --secondary-foreground: oklch(0.09 0 0);
+
+  --muted: oklch(0.95 0 0);
+  --muted-foreground: oklch(0.46 0 0);
+
+  --accent: oklch(0.91 0.17 116);
+  --accent-foreground: oklch(0.09 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+
+  --border: oklch(0.91 0 0);
+  --input: oklch(0.94 0 0);
+  --ring: oklch(0.91 0.17 116);
+}
+
+/* ─── Dark theme ────────────────────────────────────────────────── */
+.dark {
+  --background: oklch(0.09 0 0);      /* #0A0A0A */
+  --foreground: oklch(0.97 0 0);      /* #F7F7F7 */
+
+  --card: oklch(0.12 0 0);            /* #131313 */
+  --card-foreground: oklch(0.97 0 0);
+
+  --popover: oklch(0.14 0 0);
+  --popover-foreground: oklch(0.97 0 0);
+
+  --primary: oklch(0.91 0.17 116);    /* #D3E97A */
+  --primary-foreground: oklch(0.09 0 0);
+
+  --secondary: oklch(0.16 0 0);       /* #1A1A1A */
+  --secondary-foreground: oklch(0.97 0 0);
+
+  --muted: oklch(0.16 0 0);
+  --muted-foreground: oklch(0.60 0 0);
+
+  --accent: oklch(0.91 0.17 116);
+  --accent-foreground: oklch(0.09 0 0);
+
+  --destructive: oklch(0.704 0.191 22.216);
+
+  --border: oklch(0.20 0 0);          /* #222222 */
+  --input: oklch(0.16 0 0);
+  --ring: oklch(0.91 0.17 116);
+}
+
+/* ─── Base layer ────────────────────────────────────────────────── */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100dvh;
+  }
+
+  /* Subtle accent glow at the top — dark mode only */
+  .dark body {
+    background-image: radial-gradient(
+      ellipse 90% 50% at 50% -10%,
+      oklch(0.91 0.17 116 / 0.06),
+      transparent
+    );
+  }
 }
