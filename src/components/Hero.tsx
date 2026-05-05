@@ -1,237 +1,141 @@
-import React, { useEffect, useRef, useState } from "react";
-import { styled } from "@mui/system";
-import { Box, Button, Typography } from "@mui/material";
-import SocialIcons from "./SocialIcons";
-import { About, Contact, Projects } from "./Navlinks";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { createBouncyText } from "./utils/bouncyText";
-import ArrowIcon from "/assets/images/arrow.png";
-import Avatar from "./Avatar";
+import { SiLinkedin, SiGithub } from "react-icons/si"
+import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { createBouncyText } from "./utils/bouncyText"
+import Avatar3D from "./Avatar"
+import { About, Contact, Projects } from "./Navlinks"
+import { fadeUp, stagger } from "@/lib/animations"
 
-AOS.init();
-
-const HeroContainer = styled(Box)(() => ({
-  width: "100%",
-  height: "100%",
-  display: "grid",
-  gridTemplateColumns: "1.5fr 1fr",
-  gridTemplateRows: "1fr",
-  gridColumnGap: "0px",
-  gridRowGap: "0px",
-  overflow: "hidden",
-
-  "@media (max-width: 700px)": {
-    gridTemplateColumns: "1fr",
-    gridTemplateRows: "auto auto",
-  },
-}));
-
-const HeroTextContainer = styled(Box)(() => ({
-  display: "flex",
-  flexDirection: "column",
-  gap: "20px",
-  justifyContent: "flex-start",
-  alignItems: "flex-start",
-  marginTop: "90px",
-  maxWidth: "100%",
-  overflowX: "hidden",
-}));
-
-const Container = styled(Box)(() => ({
-  overflowY: "scroll",
-  height: "100%",
-  scrollBehavior: "smooth", // Ensure smooth scrolling
-  // Hide scrollbar for WebKit browsers
-  "&::-webkit-scrollbar": {
-    display: "none",
-  },
-  // Hide scrollbar for Firefox
-  scrollbarWidth: "none",
-  // Hide scrollbar for IE and Edge
-  msOverflowStyle: "none",
-}));
-
-const Section = styled(Box)(() => ({
-  minHeight: "100vh",
-}));
-
-interface BlackHoleIconProps {
-  isHovered: boolean;
-}
-
-const BlackHoleIcon: React.FC<BlackHoleIconProps> = ({ isHovered }) => (
-  <svg
-    width="15"
-    height="15"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="black-hole-icon"
-  >
-    <circle cx="12" cy="12" r="8" fill="black" />
-    {isHovered && (
-      <foreignObject x="8" y="8" width="8" height="8">
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "100%",
-            height: "100%",
-          }}
-        >
-          <img
-            src={ArrowIcon}
-            alt="arrow"
-            style={{ width: "100%", height: "100%", objectFit: "contain" }}
-          />
-        </Box>
-      </foreignObject>
-    )}
-  </svg>
-);
-
-const Hero: React.FC = () => {
-  const contactRef = useRef<HTMLDivElement>(null);
-  const [isHovered, setIsHovered] = useState<boolean>(false);
-
-  useEffect(() => {
-    AOS.init({
-      // Global settings for AOS
-      duration: 1200,
-    });
-  }, []);
-
-  const handleContactMeClick = () => {
-    if (contactRef.current) {
-      contactRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
+export default function Hero() {
   return (
-    <Container>
-      {/* Hero section */}
-      <Section>
-        <HeroContainer data-aos="fade-up">
-          <HeroTextContainer>
-            {/* "hi, i am" text, hidden on mobile */}
-            <Typography
-              sx={{
-                fontFamily: "Bebas Neue",
-                color: "#FFFFFF",
-                fontSize: "90px",
-                lineHeight: 1,
-                display: { xs: "none", md: "block" }, // Hide on mobile (xs)
-              }}
-            >
-              {createBouncyText("hi, i am")} <br />
-            </Typography>
+    <>
+      {/* ── Hero ─────────────────────────────────────────────── */}
+      <section
+        id="home"
+        className="h-[100dvh] pt-20 flex items-center overflow-hidden"
+      >
+        <div className="w-full grid md:grid-cols-[1.4fr_1fr] gap-8 md:gap-12 items-center">
 
-            <Typography
-              sx={{
-                fontFamily: "Bebas Neue",
-                color: "#FFFFFF",
-                fontSize: { xs: "clamp(40px, 12vw, 90px)", md: "90px" },
-                lineHeight: 1,
-                whiteSpace: "nowrap",
-              }}
-            >
-              {createBouncyText("GIDEON BUBA")}
-            </Typography>
-
-            <Typography
-              sx={{
-                fontFamily: "manrope",
-                lineHeight: "27px",
-                fontWeight: 400,
-                color: "#C7C7C7",
-                fontSize: "18px",
-                maxWidth: "100%",
-                wordWrap: "break-word",
-              }}
-            >
-              I am a full-stack developer with experience in creating
-              high-quality web applications. Passionate about learning new
-              technologies and solving problems. Skilled in teamwork and
-              delivering user-friendly, scalable solutions in agile
-              environments.
-            </Typography>
-
-            <Box sx={{ display: "flex", alignItems: "center", gap: "20px" }}>
-              <Button
-                variant="contained"
-                endIcon={<BlackHoleIcon isHovered={isHovered} />}
-                disableElevation
-                sx={{
-                  width: "187px",
-                  height: "54px",
-                  backgroundColor: "#D3E97A",
-                  fontFamily: "Manrope",
-                  fontSize: "16px",
-                  fontWeight: 700,
-                  lineHeight: "27px",
-                  color: "#0A0A0A",
-                  borderRadius: "100px",
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "10px",
-                  "&:hover .black-hole-icon": {
-                    transform: "scale(4)",
-                    transition: "transform 0.3s ease",
-                  },
-                }}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-                onClick={handleContactMeClick}
-              >
-                CONTACT ME
-              </Button>
-              <Box
-                sx={{
-                  display: { xs: "flex", md: "none" },
-                  alignItems: "center",
-                  gap: "10px",
-                }}
-              >
-                <SocialIcons />
-              </Box>
-            </Box>
-          </HeroTextContainer>
-          <Box
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              maxWidth: "100%",
-              overflow: "hidden",
-            }}
+          {/* Left column — staggered entrance */}
+          <motion.div
+            className="flex flex-col gap-4"
+            variants={stagger(0.13)}
+            initial="hidden"
+            animate="show"
           >
-            <Avatar /> {/* Use the Avatar component here */}
-          </Box>
-        </HeroContainer>
-      </Section>
+            {/* Availability badge */}
+            <motion.div variants={fadeUp} className="flex items-center gap-2.5 w-fit">
+              <span className="size-2 rounded-full bg-primary animate-pulse" />
+              <span className="text-sm text-muted-foreground">
+                Available for new opportunities
+              </span>
+            </motion.div>
 
-      {/* Projects section */}
-      <Section data-aos="fade-up">
+            {/* Name */}
+            <motion.div variants={fadeUp}>
+              <p className="font-heading leading-none text-muted-foreground/40 select-none
+                            text-[clamp(1.5rem,3.5vh,3.5rem)]">
+                {createBouncyText("hi, i am")}
+              </p>
+              <h1 className="font-heading leading-[0.92] text-foreground
+                             text-[clamp(3rem,8.5vh,7.5rem)]">
+                {createBouncyText("GIDEON")}
+                <br />
+                {createBouncyText("BUBA")}
+              </h1>
+            </motion.div>
+
+            {/* Bio */}
+            <motion.p
+              variants={fadeUp}
+              className="text-muted-foreground text-sm md:text-base leading-relaxed max-w-[480px]"
+            >
+              Full-stack developer based in Abuja. I build high-quality web
+              applications with React, TypeScript, and Node.js — focused on
+              clean code, great UX, and shipping things that make an impact.
+            </motion.p>
+
+            {/* CTAs */}
+            <motion.div variants={fadeUp} className="flex flex-wrap items-center gap-3">
+              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                <Button
+                  size="lg"
+                  className="rounded-full px-7 h-11 font-semibold text-sm"
+                  render={<a href="#contact" />}
+                >
+                  Contact Me
+                </Button>
+              </motion.div>
+
+              <motion.div whileHover={{ scale: 1.04 }} whileTap={{ scale: 0.97 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full px-7 h-11 font-semibold text-sm"
+                  render={<a href="#projects" />}
+                >
+                  View Work
+                </Button>
+              </motion.div>
+
+              {/* Mobile social icons */}
+              <div className="flex md:hidden items-center gap-4 ml-1">
+                <a
+                  href="https://www.linkedin.com/in/gideon-buba-34aaa2190/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                >
+                  <SiLinkedin size={20} />
+                </a>
+                <a
+                  href="https://github.com/Gideon-Buba"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="GitHub"
+                  className="text-muted-foreground hover:text-foreground transition-colors duration-200"
+                >
+                  <SiGithub size={20} />
+                </a>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Right column — 3D Avatar scale-in */}
+          <motion.div
+            className="hidden md:flex items-center justify-center"
+            initial={{ opacity: 0, scale: 0.85 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
+          >
+            <div className="w-full max-w-[400px] aspect-square">
+              <Avatar3D />
+            </div>
+          </motion.div>
+
+        </div>
+      </section>
+
+      {/* ── Projects ─────────────────────────────────────────── */}
+      <section id="projects" className="py-24">
         <Projects />
-      </Section>
+      </section>
 
-      {/* About section */}
-      <Section data-aos="fade-up">
+      {/* ── About ────────────────────────────────────────────── */}
+      <section id="about" className="py-24">
         <About />
-      </Section>
+      </section>
 
-      {/* Contact section */}
-      <Section
-        data-aos="fade-up"
-        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
-        ref={contactRef}
+      {/* ── Contact ──────────────────────────────────────────── */}
+      <section
+        id="contact"
+        className="py-24 flex items-center justify-center"
       >
         <Contact />
-      </Section>
-    </Container>
-  );
-};
-
-export default Hero;
+      </section>
+    </>
+  )
+}
